@@ -32,14 +32,12 @@ const fileSources = {
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
 	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
 	
 	//
 	@include media-breakpoint-between(md, xl) { }
 	
 	
 	//
-	@include media-breakpoint-only(xs) {}
 	@include media-breakpoint-only(sm) {}
 	@include media-breakpoint-only(md) {}
 	@include media-breakpoint-only(lg) {}
@@ -50,7 +48,6 @@ const fileSources = {
 	@include media-breakpoint-down(lg) {}
 	@include media-breakpoint-down(md) {}
 	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
 
 } // end.{blockName}`
 	,

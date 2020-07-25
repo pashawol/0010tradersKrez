@@ -1,12 +1,15 @@
-$default-font: "roboto";
+$default-font: "PT Root UI";
 // $file-form: ($file-formats: woff2 woff ttf);
-$addr: '../fonts/';
-$file-format: woff2 woff;
 
-@include font-face ($default-font, $addr + "Roboto-Regular/Roboto-Regular", $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Bold/Roboto-Bold", bold, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Medium/Roboto-Medium", 500, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Black/Roboto-Black", 900, $file-formats: $file-format);
+$mono: "PT Mono";
+$addr: '../fonts/';
+$file-format: woff2;
+
+@include font-face ($default-font, $addr + "PTRootUI-Bold", bold, $file-formats: $file-format);
+ 
+@include font-face ($default-font, $addr + "PTRootUI-Regular", $file-formats: $file-format);
+@include font-face ($default-font, $addr + "ptmonobold", 700, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "ptsansitalic", 400, italic, $file-formats: $file-format);
 
 // font-weight helper:
 

@@ -87,13 +87,6 @@ const JSCCommon = {
 		if (_this.menuMobileLink) {
 
 			_this.toggleMenu();
-			// _this.menuMobileLink.forEach(function (element) {
-			// 	element.addEventListener('click', function (e) {
-			// 		console.log(element);
-			// 		_this.closeMenu();
-
-			// 	});
-			// })
 			document.addEventListener('mouseup', function (event) {
 				let container = event.target.closest(".menu-mobile--js.active"); // (1)
 				if (!container) {
@@ -139,22 +132,6 @@ function eventHandler() {
 	// /добавляет подложку для pixel perfect
 
 
-
-	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function() {
-
-	// 	if (this.href == url) {
-	// 		if ($(this).hasClass("top-nav__link") == true) {
-
-	// 			$(this).addClass('top-nav__link-active');
-	// 		}
-	// 		if ($(this).hasClass("footer__link") == true) {
-
-	// 			$(this).addClass('footer__link-active');
-	// 		} 
-	// 	}; 
-	// }); 
-
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
@@ -180,7 +157,7 @@ function eventHandler() {
 	window.addEventListener('resize', () => {
 		heightses();
 
-	});
+	}, { passive: true });
 
 	heightses();
 
@@ -195,28 +172,36 @@ function eventHandler() {
 	});
 
 	let defaultSl = {
-
-	}
-	const swiper4 = new Swiper('.color-slider', {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: 'auto',
+		spaceBetween: 0,
+		lazy: {
+			loadPrevNext: true,
+		},
 		watchOverflow: true,
 		spaceBetween: 0,
-		freeMode: true,
-		watchOverflow: true,
-		slidesPerGroup: 3,
-
-		// centeredSlides: true,
 		loop: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+			// renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+		},
+	}
+
+	const swiper4 = new Swiper('.color-slider', {
+		// slidesPerView: 5,
+		...defaultSl,
+		slidesPerView: 'auto', 
+		freeMode: true, 
+		loopFillGroupWithBlank: true,
+		touchRatio: 0.2,
+		slideToClickedSlide: true,
+		freeModeMomentum: true,
 
 	});
 	// modal window

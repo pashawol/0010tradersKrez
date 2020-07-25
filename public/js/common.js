@@ -39,6 +39,20 @@ var JSCCommon = {
 			$.fancybox.close();
 		});
 		$.fancybox.defaults.backFocus = false;
+		$(".link-modal").click(function () {
+			var th = $(this);
+			var modal = $(th.attr('href'));
+			var content = {
+				title: th.data('title'),
+				text: th.data('text'),
+				btn: th.data('btn'),
+				order: th.data('order')
+			};
+			modal.find('.ttu').html(content.title);
+			modal.find('.after-headline').html(content.text);
+			modal.find('.btn').val(content.btn);
+			modal.find('.order').val(content.order);
+		});
 	},
 	// /magnificPopupCall
 	toggleMenu: function toggleMenu() {
@@ -78,13 +92,7 @@ var JSCCommon = {
 		var _this = this;
 
 		if (_this.menuMobileLink) {
-			_this.toggleMenu(); // _this.menuMobileLink.forEach(function (element) {
-			// 	element.addEventListener('click', function (e) {
-			// 		console.log(element);
-			// 		_this.closeMenu();
-			// 	});
-			// })
-
+			_this.toggleMenu();
 
 			document.addEventListener('mouseup', function (event) {
 				var container = event.target.closest(".menu-mobile--js.active"); // (1)
@@ -92,6 +100,8 @@ var JSCCommon = {
 				if (!container) {
 					_this.closeMenu();
 				}
+			}, {
+				passive: true
 			});
 		}
 	},
@@ -111,7 +121,7 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _objectSpread2;
+	var _defaultSl;
 
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
@@ -120,17 +130,6 @@ function eventHandler() {
 	// добавляет подложку для pixel perfect
 
 	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
-	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function() {
-	// 	if (this.href == url) {
-	// 		if ($(this).hasClass("top-nav__link") == true) {
-	// 			$(this).addClass('top-nav__link-active');
-	// 		}
-	// 		if ($(this).hasClass("footer__link") == true) {
-	// 			$(this).addClass('footer__link-active');
-	// 		} 
-	// 	}; 
-	// }); 
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
@@ -154,6 +153,8 @@ function eventHandler() {
 
 	window.addEventListener('resize', function () {
 		heightses();
+	}, {
+		passive: true
 	});
 	heightses(); // листалка по стр
 
@@ -165,31 +166,31 @@ function eventHandler() {
 		}, 1100);
 		return false;
 	});
-	var defaultSl = {};
-	var swiper4 = new Swiper('.color-slider', _objectSpread(_objectSpread({}, defaultSl), {}, (_objectSpread2 = {
-		slidesPerView: 'auto',
-		watchOverflow: true,
+	var defaultSl = (_defaultSl = {
 		spaceBetween: 0,
-		freeMode: true
-	}, _defineProperty(_objectSpread2, "watchOverflow", true), _defineProperty(_objectSpread2, "slidesPerGroup", 3), _defineProperty(_objectSpread2, "loop", true), _defineProperty(_objectSpread2, "loopFillGroupWithBlank", true), _defineProperty(_objectSpread2, "touchRatio", 0.2), _defineProperty(_objectSpread2, "slideToClickedSlide", true), _defineProperty(_objectSpread2, "freeModeMomentum", true), _defineProperty(_objectSpread2, "navigation", {
+		lazy: {
+			loadPrevNext: true
+		},
+		watchOverflow: true
+	}, _defineProperty(_defaultSl, "spaceBetween", 0), _defineProperty(_defaultSl, "loop", true), _defineProperty(_defaultSl, "navigation", {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev'
-	}), _objectSpread2))); // modal window
+	}), _defineProperty(_defaultSl, "pagination", {
+		el: ' .swiper-pagination',
+		type: 'bullets',
+		clickable: true // renderBullet: function (index, className) {
+		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+		// }
 
-	var gets = function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
-		}
-
-		return b;
-	}(); // form
-
+	}), _defaultSl);
+	var swiper4 = new Swiper('.color-slider', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		slidesPerView: 'auto',
+		freeMode: true,
+		loopFillGroupWithBlank: true,
+		touchRatio: 0.2,
+		slideToClickedSlide: true,
+		freeModeMomentum: true
+	})); // modal window
 
 	var gets = function () {
 		var a = window.location.search;
@@ -248,6 +249,8 @@ function eventHandler() {
 		// We execute the same script as before
 		var vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+	}, {
+		passive: true
 	});
 }
 

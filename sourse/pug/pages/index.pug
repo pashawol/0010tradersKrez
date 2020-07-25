@@ -3,20 +3,61 @@ extends layout/main.pug
 
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug 
-
+include ../blocks/sAdvanteges/_sAdvanteges.pug
+include ../blocks/sBook/_sBook.pug
+include ../blocks/sWhatOTS/_sWhatOTS.pug
+include ../blocks/sWhatWith/_sWhatWith.pug
+include ../blocks/sSubtleties/_sSubtleties.pug
+include ../blocks/sMoves/_sMoves.pug
+include ../blocks/sHowWork/_sHowWork.pug
+include ../blocks/sAble/_sAble.pug
+include ../blocks/sHowMuch/_sHowMuch.pug
+include ../blocks/sDream/_sDream.pug
+include ../blocks/sMillionaire/_sMillionaire.pug
+include ../blocks/sForAdults/_sForAdults.pug
+include ../blocks/sRiskReward/_sRiskReward.pug
+include ../blocks/sCrisis/_sCrisis.pug
+include ../blocks/sSpeculations/_sSpeculations.pug
+include ../blocks/sAuthor/_sAuthor.pug
+include ../blocks/sRews/_sRews.pug
+include ../blocks/sPublicTransactions/_sPublicTransactions.pug
+include ../blocks/sWhatGet/_sWhatGet.pug
+include ../blocks/sBecome/_sBecome.pug
+include ../blocks/sFaq/_sFaq.pug
+include ../blocks/sGoldenLevel/_sGoldenLevel.pug
+include ../blocks/sReadySource/_sReadySource.pug
 block variables
 	- let  mainPage= null
 block title
 	- let  title= 'title'
 	title= title
 block pagecontent 
-	//- +mob-mnu()
+	+mob-mnu()
 	+header()
-
 		+top-nav()
-		+topLine()  
 	+headerBlock()
-	+sForm()
-	+sContact()
+	+sAdvanteges
+	+sBook
+	+sWhatOTS
+	+sWhatWith
+	+sSubtleties
+	+sMoves
+	+sHowWork
+	+sAble
+	+sHowMuch
+	+sDream
+	+sMillionaire
+	+sForAdults
+	+sRiskReward
+	+sCrisis
+	+sSpeculations
+	+sAuthor
+	+sRews
+	+sPublicTransactions
+	+sWhatGet
+	+sBecome
+	+sFaq
+	+sGoldenLevel
+	+sReadySource
 	+footer()
 	
