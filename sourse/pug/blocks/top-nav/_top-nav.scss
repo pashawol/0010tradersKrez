@@ -1,15 +1,24 @@
 .top-nav {
-	padding-top: 15px;
-	// position: absolute;
-	top: 100%;
-	// @include clearfix;ss
+	background-color: $white;
+	//box-shadow: 0 0 0 1px $black;
+	position: absolute;
+
 	z-index: 20;
-	padding-top: 3px;
-	@include mt;
-	padding-bottom: 10px;
+	@include mt();
 	top: 0;
 	left: 0;
 	width: 100%;
+
+	padding: 10px 0;
+	@include media-breakpoint-up(lg){
+		padding: 9px 0 11px 0;
+	}
+
+	&__container{
+		@include media-breakpoint-down(lg){
+			max-width: 100% !important;
+		}
+	}
 
 	&.fixed {
 		width: 100vw;
@@ -17,18 +26,69 @@
 		margin-top: 0;
 		background-color: #fff;
 	}
+	&__row{
+		align-items: center;
 
+		@include media-breakpoint-down(sm){
+			@include roww(10px);
+		}
+	}
+
+
+	//logo
+	&__logo{
+		@include media-breakpoint-up(sm){
+			width: 43px;
+		}
+		height: 100%;
+		display: flex;
+		align-items: center;
+
+		img{
+			max-width: 100%;
+			height: auto;
+			width: auto;
+		}
+	}
+	//menu dt
 	&__nav {
-		text-align: center;
+		margin: 0;
+		padding: 0;
 		list-style-type: none;
+
+		display: flex;
+		height: 100%;
+		align-items: center;
+
 	}
 
 	&__item {
-		display: inline-block;
 		list-style-type: none;
+		margin-right: 50px;
+
+		&:last-child{
+			margin-right: 0;
+		}
+
+		a{
+			color: $light;
+			&:hover{
+				color: darken($light, 15);
+			}
+
+			font-weight: 700;
+			font-size: rem(16px);
+			line-height: 1;
+		}
+	}
+	//btn
+	&__btn{
+		@extend .btn-empty-frame;
+		@include media-breakpoint-up(lg){
+			margin-top: 2px;
+		}
 	}
 
-	// 
 	@include media-breakpoint-up(xl) {}
 
 	@include media-breakpoint-up(lg) {}

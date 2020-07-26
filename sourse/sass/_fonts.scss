@@ -6,10 +6,11 @@ $addr: '../fonts/';
 $file-format: woff2;
 
 @include font-face ($default-font, $addr + "PTRootUI-Bold", bold, $file-formats: $file-format);
- 
 @include font-face ($default-font, $addr + "PTRootUI-Regular", $file-formats: $file-format);
-@include font-face ($default-font, $addr + "ptmonobold", 700, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "ptsansitalic", 400, italic, $file-formats: $file-format);
+//@include font-face ($default-font, $addr + "ptmonobold", 700, $file-formats: $file-format);
+//@include font-face ($default-font, $addr + "ptsansitalic", 400, italic, $file-formats: $file-format);
+@include font-face ($mono, $addr + "ptmonobold", 700, $file-formats: $file-format);
+@include font-face ($mono, $addr + "ptsansitalic", 400, italic, $file-formats: $file-format);
 
 // font-weight helper:
 

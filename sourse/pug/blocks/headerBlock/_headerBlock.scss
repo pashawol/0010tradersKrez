@@ -1,17 +1,78 @@
 // start .headerBlock
 .headerBlock {
-	margin-bottom: 1px;
-	min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
-	// background-image: url(../img);
-	// background-color: #000000;
+	position: relative;
+	background-color: $primary;
+	color: $white;
 
-	h1 {
-		margin-bottom: 1px;
+	--sPB: #{0};
+	--sPT: #{68px};
+	@include media-breakpoint-up(lg){
+		--sPT: #{56px};
 	}
 
-	h2 {
-		margin-bottom: 1px;
+	&__right-bg{
+		position: absolute;
+		z-index: 1;
+		img{
+
+		}
+	}
+	&__left-bg{
+		position: absolute;
+		z-index: 1;
+		img{
+
+		}
+	}
+
+	//container
+	&__container{
+		position: relative;
+		z-index: 2;
+
+		padding: 117px 0 90px 0;
+	}
+
+	&__txt-content{
+		p{
+			font-weight: bold;
+			line-height: (38/30);
+			color: rgba($white, .5);
+
+			font-size: rem(30px);
+		}
+		h1{
+			font-weight: bold;
+			line-height: (59/50);
+			margin-bottom: rem(27px);
+		}
+		ul{
+			list-style: none;
+			margin: 0 0 89px 0;
+			padding: 0;
+
+			li{
+				&:before{
+					content: '•';
+					padding-right: 10px;
+					font-size: 20px;
+				}
+				font-weight: bold;
+				font-size: rem(20px);
+			}
+		}
+	}
+	&__get-started-btn{
+		@extend .btn-red-frame;
+	}
+	&__man-img{
+
+		img{
+
+		}
+	}
+	&__img-col{
+
 	}
 
 	@include media-breakpoint-up(xl) {}

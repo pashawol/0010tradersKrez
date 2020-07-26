@@ -25,30 +25,22 @@
 	</head>
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div class="main-wrapper">
-			<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
+			<div class="toggle-menu-mobile toggle-menu-mobile--js d-none"><span></span>
 			</div>
 			<div class="menu-mobile menu-mobile--js d-lg-none">
 				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
 				</div>
-				<div class="menu-mobile__inner">
+				<div class="menu-mobile__inner"><a class="menu-mobile__logo" href="/"><img src="img/logo.svg" alt=""/></a>
 					<ul class="menu-mobile__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="/" itemprop="url">Главная</a>
+						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="/" itemprop="url">Инструменты</a>
 						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Услуги  </a>
+						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Стратегия</a>
 						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Подбор септика   </a>
+						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Результаты</a>
 						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Акции </a>
+						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Программа</a>
 						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> О компании  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Доставка и оплата </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Клиентам  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Наши работы   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#sContact" itemprop="url">Контакты </a>
+						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Автор</a>
 						</li>
 					</ul>
 					<div class="text-right"></div>
@@ -59,42 +51,63 @@
 			<header class="header" id="header">
 				<!-- start top-nav-->
 				<div class="top-nav block-with-lazy">
-					<div class="container">
-						<ul class="top-nav__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="/" itemprop="url">Главная</a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Услуги  </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Подбор септика   </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Акции </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> О компании  </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> Доставка и оплата </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> Клиентам  </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url"> Наши работы   </a>
-							</li>
-							<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#sContact" itemprop="url">Контакты </a>
-							</li>
-						</ul>
+					<div class="top-nav__container container">
+						<div class="top-nav__row row">
+							<div class="col-lg-auto col"><a class="top-nav__logo" href="/"><img src="img/logo.svg" alt=""/></a>
+							</div>
+							<div class="col d-none d-lg-block">
+								<ul class="top-nav__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+									<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="/" itemprop="url">Инструменты</a>
+									</li>
+									<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Стратегия</a>
+									</li>
+									<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Результаты</a>
+									</li>
+									<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Программа</a>
+									</li>
+									<li class="top-nav__item" itemprop="item"><a class="top-nav__link" href="#" itemprop="url">Автор</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-auto"><a class="top-nav__btn scroll-link" href="#s-form"> Начать зарабатывать</a>
+							</div>
+							<div class="col-auto d-lg-none">
+								<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- end top-nav-->
+				<!-- start headerBlock-->
+				<div class="headerBlock section" id="headerBlock">
+					<div class="headerBlock__right-bg"><img class="lazy" src="#" data-src="img/@2x/header-bg-right.png" alt=""/>
+					</div>
+					<div class="headerBlock__left-bg"><img class="lazy" src="#" data-src="img/@2x/header-bg-left.png" alt=""/>
+					</div>
+					<div class="headerBlock__container container">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="headerBlock__txt-content">
+									<p>Простой и&nbsp;доступный источник дохода.</p>
+									<h1>Спекуляции дешевыми акциями на&nbsp;ОТС</h1>
+									<ul>
+										<li>Вход от&nbsp;100$</li>
+										<li>Занимает 25&nbsp;минут в&nbsp;день</li>
+										<li>Сделки приносят кратное умножение вложенных средств</li>
+									</ul>
+								</div><a class="headerBlock__get-started-btn" href="#">Приступить немедленно!</a>
+							</div>
+							<div class="headerBlock__img-col col-lg-6">
+								<div class="headerBlock__man-img"><img src="img/@2x/man.png" alt=""/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end headerBlock-->
 			</header>
 			<!-- end header-->
-			<!-- start headerBlock-->
-			<div class="headerBlock section" id="headerBlock">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>headerBlock ds dfsdfdsfsd</h2>
-					</div>
-					<div class="row"></div>
-				</div>
-			</div>
-			<!-- end headerBlock-->
 			<!-- start sAdvanteges-->
 			<section class="sAdvanteges section" id="sAdvanteges">
 				<div class="container">
