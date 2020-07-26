@@ -233,7 +233,40 @@ function eventHandler() {
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
 		}).fail(function () {});
-	});
+	}); //luckyone Js
+
+	function fixedStip() {
+		var fixedStrip = document.querySelector('.bottom-fixed-strip');
+		if (!fixedStrip) return;
+		var fixedHook = document.querySelector('.fixed-hook-js');
+		if (!fixedHook) return;
+		window.addEventListener("scroll", toggleFixedStrip.bind(undefined, fixedHook, fixedStrip), {
+			passive: true
+		});
+	}
+
+	fixedStip();
+
+	function toggleFixedStrip(fixedHook, fixedStrip) {
+		var hookTop = $(fixedHook)[0].getBoundingClientRect().top + $(window)['scrollTop']();
+		var hookHeight = fixedHook.offsetHeight;
+		var hookBot = hookTop + hookHeight;
+		var footerTop = $('.footer')[0].getBoundingClientRect().top + $(window)['scrollTop']();
+		var windowHeight = calcVh(100);
+
+		if (hookBot > window.scrollY || footerTop - windowHeight < window.scrollY) {
+			$(fixedStrip).removeClass('fixed');
+		} else {
+			$(fixedStrip).addClass('fixed');
+		}
+	}
+
+	function calcVh(v) {
+		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		return v * h / 100;
+	} //end luckyone js
+
+
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

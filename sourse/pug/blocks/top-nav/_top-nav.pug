@@ -21,7 +21,9 @@ mixin mob-mnu()
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
-	+b.top-nav.block-with-lazy
+	+b.top-nav.block-with-lazy.bottom-fixed-strip
+		+e.top-part.d-none.d-xl-flex
+			img(src="img/@2x/header-r-top-part.jpg" alt="")
 		+e.container.container
 			+e.row.row
 				.col-lg-auto.col

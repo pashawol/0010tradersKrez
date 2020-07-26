@@ -251,6 +251,41 @@ function eventHandler() {
 
 	});
 
+	//luckyone Js
+	function fixedStip(){
+		let fixedStrip = document.querySelector('.bottom-fixed-strip');
+		if(!fixedStrip) return
+
+		let fixedHook = document.querySelector('.fixed-hook-js');
+		if(!fixedHook) return
+
+		window.addEventListener("scroll", toggleFixedStrip.bind(undefined, fixedHook, fixedStrip), {passive:  true});
+	}
+	fixedStip();
+
+	function toggleFixedStrip(fixedHook, fixedStrip){
+		let hookTop = $(fixedHook)[0].getBoundingClientRect().top + $(window)['scrollTop']();
+		let hookHeight = fixedHook.offsetHeight;
+		let hookBot = hookTop + hookHeight;
+
+		let footerTop = $('.footer')[0].getBoundingClientRect().top + $(window)['scrollTop']();
+		let windowHeight = calcVh(100);
+
+		if (hookBot > window.scrollY || (footerTop - windowHeight) < window.scrollY){
+			$(fixedStrip).removeClass('fixed');
+		}
+		else {
+			$(fixedStrip).addClass('fixed');
+		}
+	}
+
+	function calcVh(v) {
+		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		return (v * h) / 100;
+	}
+
+	//end luckyone js
+
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
 		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)

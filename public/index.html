@@ -50,7 +50,9 @@
 			<!-- start header-->
 			<header class="header" id="header">
 				<!-- start top-nav-->
-				<div class="top-nav block-with-lazy">
+				<div class="top-nav block-with-lazy bottom-fixed-strip">
+					<div class="top-nav__top-part d-none d-xl-flex"><img src="img/@2x/header-r-top-part.jpg" alt=""/>
+					</div>
 					<div class="top-nav__container container">
 						<div class="top-nav__row row">
 							<div class="col-lg-auto col"><a class="top-nav__logo" href="/"><img src="img/logo.svg" alt=""/></a>
@@ -80,14 +82,14 @@
 				</div>
 				<!-- end top-nav-->
 				<!-- start headerBlock-->
-				<div class="headerBlock section" id="headerBlock">
+				<div class="headerBlock section fixed-hook-js" id="headerBlock">
 					<div class="headerBlock__right-bg"><img class="lazy" src="#" data-src="img/@2x/header-bg-right.png" alt=""/>
 					</div>
-					<div class="headerBlock__left-bg"><img class="lazy" src="#" data-src="img/@2x/header-bg-left.png" alt=""/>
+					<div class="headerBlock__left-bg d-none d-xxl-block"><img class="lazy" src="#" data-src="img/@2x/header-bg-left.png" alt=""/>
 					</div>
 					<div class="headerBlock__container container">
-						<div class="row">
-							<div class="col-lg-6">
+						<div class="headerBlock__row row">
+							<div class="col-lg-7 col-xl-6">
 								<div class="headerBlock__txt-content">
 									<p>Простой и&nbsp;доступный источник дохода.</p>
 									<h1>Спекуляции дешевыми акциями на&nbsp;ОТС</h1>
@@ -98,11 +100,9 @@
 									</ul>
 								</div><a class="headerBlock__get-started-btn" href="#">Приступить немедленно!</a>
 							</div>
-							<div class="headerBlock__img-col col-lg-6">
-								<div class="headerBlock__man-img"><img src="img/@2x/man.png" alt=""/>
-								</div>
-							</div>
 						</div>
+					</div>
+					<div class="headerBlock__man-img d-none d-lg-block"><img src="img/@2x/man.png" alt=""/>
 					</div>
 				</div>
 				<!-- end headerBlock-->
@@ -112,9 +112,70 @@
 			<section class="sAdvanteges section" id="sAdvanteges">
 				<div class="container">
 					<div class="section-title text-center">
-						<h2>sAdvanteges</h2>
+						<h2>Просто добавьте в свою жизнь еще один источник дохода</h2>
 					</div>
-					<div class="row"></div>
+					<div class="sAdvanteges__row row">
+						<div class="col-sm-6 col-lg-4">
+							<div class="sAdvanteges__item">
+								<div class="sAdvanteges__item-img"><img class="lazy" src="#" data-src="img/advantage-1.svg" alt=""/>
+								</div>
+								<div class="sAdvanteges__content">
+									<p>Это легко и доступно</p>
+									<p>Более 200 учеников уже подтвердили, что зарабатывать на&nbsp;рынке ОТС может каждый.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="sAdvanteges__item">
+								<div class="sAdvanteges__item-img"><img class="lazy" src="#" data-src="img/advantage-2.svg" alt=""/>
+								</div>
+								<div class="sAdvanteges__content">
+									<p class="two-lined">Можно совмещать с&nbsp;любой занятостью</p>
+									<p>Торговля на&nbsp;ОТС не&nbsp;требует постоянного сидения у&nbsp;монитора и&nbsp;отнимет у&nbsp;Вас не&nbsp;более 3&nbsp;часов в&nbsp;неделю.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="sAdvanteges__item">
+								<div class="sAdvanteges__item-img"><img class="lazy" src="#" data-src="img/advantage-3.svg" alt=""/>
+								</div>
+								<div class="sAdvanteges__content">
+									<p>Низкий порог входа</p>
+									<p>Для полноценного портфеля достаточно от&nbsp;400$. Можно стартовать со&nbsp;100$ при условии дальнейшего ежемесячного пополнения на&nbsp;50$.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="sAdvanteges__item">
+								<div class="sAdvanteges__item-img"><img class="lazy" src="#" data-src="img/advantage-4.svg" alt=""/>
+								</div>
+								<div class="sAdvanteges__content">
+									<p>Высокая доходность</p>
+									<p> Стратегия позволяет получать прибыль от&nbsp;150% до&nbsp;1800% в&nbsp;сделке.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="sAdvanteges__item">
+								<div class="sAdvanteges__item-img"><img class="lazy" src="#" data-src="img/advantage-5.svg" alt=""/>
+								</div>
+								<div class="sAdvanteges__content">
+									<p>Легально и прозрачно</p>
+									<p>Торговля ведется через крупного лицензированного брокера, находящегося под строгим надзором регуляторов. Вы&nbsp;получаете официальный отчет о&nbsp;сделках и&nbsp;платите налоги с&nbsp;полученной прибыли</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="sAdvanteges__item">
+								<div class="sAdvanteges__item-img"><img class="lazy" src="#" data-src="img/advantage-6.svg" alt=""/>
+								</div>
+								<div class="sAdvanteges__content">
+									<p>Работает даже в кризис</p>
+									<p>Каждый месяц 2020 года мы&nbsp;закрыли в&nbsp;прибыль. И&nbsp;во&nbsp;время роста рынков, и&nbsp;во&nbsp;время падения рынков&nbsp;&mdash; на&nbsp;наш доход это никак не&nbsp;повлияло.</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 			<!-- end sAdvanteges-->

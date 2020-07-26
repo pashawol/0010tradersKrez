@@ -1,13 +1,13 @@
 mixin headerBlock()
 	// start headerBlock
-	+b.headerBlock.section#headerBlock&attributes(attributes)
+	+b.headerBlock.section.fixed-hook-js#headerBlock&attributes(attributes)
 		+e.right-bg
 			img.lazy(src="#" data-src="img/@2x/header-bg-right.png" alt="")
-		+e.left-bg
+		+e.left-bg.d-none.d-xxl-block
 			img.lazy(src="#" data-src="img/@2x/header-bg-left.png" alt="")
 		+e.container.container
-			.row
-				.col-lg-6
+			+e.row.row
+				.col-lg-7.col-xl-6
 					+e.txt-content
 						p Простой и&nbsp;доступный источник дохода.
 						h1 Спекуляции дешевыми акциями на&nbsp;ОТС
@@ -16,7 +16,6 @@ mixin headerBlock()
 							li Занимает 25&nbsp;минут в&nbsp;день
 							li Сделки приносят кратное умножение вложенных средств
 					+e.A.get-started-btn(href='#') Приступить немедленно!
-				+e.img-col.col-lg-6
-					+e.man-img
-						img(src="img/@2x/man.png" alt="")
+		+e.man-img.d-none.d-lg-block
+			img(src="img/@2x/man.png" alt="")
 	// end headerBlock

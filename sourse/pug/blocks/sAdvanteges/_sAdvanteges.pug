@@ -3,7 +3,32 @@ mixin sAdvanteges()
 	+b.SECTION.sAdvanteges.section#sAdvanteges&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sAdvanteges
-				
-			.row
+				h2 Просто добавьте в свою жизнь еще один источник дохода
+			+e.row.row
+				+advantageItem(1)
+					p Это легко и доступно
+					p Более 200 учеников уже подтвердили, что зарабатывать на&nbsp;рынке ОТС может каждый.
+				+advantageItem(2)
+					p.two-lined Можно совмещать с&nbsp;любой занятостью
+					p Торговля на&nbsp;ОТС не&nbsp;требует постоянного сидения у&nbsp;монитора и&nbsp;отнимет у&nbsp;Вас не&nbsp;более 3&nbsp;часов в&nbsp;неделю.
+				+advantageItem(3)
+					p Низкий порог входа
+					p Для полноценного портфеля достаточно от&nbsp;400$. Можно стартовать со&nbsp;100$ при условии дальнейшего ежемесячного пополнения на&nbsp;50$.
+				+advantageItem(4)
+					p Высокая доходность
+					p  Стратегия позволяет получать прибыль от&nbsp;150% до&nbsp;1800% в&nbsp;сделке.
+				+advantageItem(5)
+					p Легально и прозрачно
+					p Торговля ведется через крупного лицензированного брокера, находящегося под строгим надзором регуляторов. Вы&nbsp;получаете официальный отчет о&nbsp;сделках и&nbsp;платите налоги с&nbsp;полученной прибыли
+				+advantageItem(6)
+					p Работает даже в кризис
+					p Каждый месяц 2020 года мы&nbsp;закрыли в&nbsp;прибыль. И&nbsp;во&nbsp;время роста рынков, и&nbsp;во&nbsp;время падения рынков&nbsp;&mdash; на&nbsp;наш доход это никак не&nbsp;повлияло.
 	// end sAdvanteges
+
+mixin advantageItem(imgNum)
+	.col-sm-6.col-lg-4
+		+e.item
+			+e.item-img
+				img.lazy(src="#" data-src=`img/advantage-${imgNum}.svg` alt="")
+			+e.content
+				block
