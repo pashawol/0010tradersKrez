@@ -264,8 +264,23 @@ function eventHandler() {
 	function calcVh(v) {
 		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 		return v * h / 100;
-	} //end luckyone js
+	} //subtitles slider
 
+
+	var subtitleSlider = new Swiper('.subtitles-slider-js', {
+		slidesPerView: 3,
+		spaceBetween: 36,
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 4
+		},
+		//
+		navigation: {
+			nextEl: '.subtitle-swiper-next',
+			prevEl: '.subtitle-swiper-prev'
+		}
+	}); //end luckyone js
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 

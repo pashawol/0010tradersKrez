@@ -284,6 +284,23 @@ function eventHandler() {
 		return (v * h) / 100;
 	}
 
+	//subtitles slider
+	let subtitleSlider = new Swiper('.subtitles-slider-js', {
+		slidesPerView: 3,
+		spaceBetween: 36,
+
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 4,
+		},
+		//
+		navigation: {
+			nextEl: '.subtitle-swiper-next',
+			prevEl: '.subtitle-swiper-prev',
+		},
+	});
+
 	//end luckyone js
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;

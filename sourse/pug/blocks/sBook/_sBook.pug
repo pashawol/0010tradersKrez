@@ -2,8 +2,28 @@ mixin sBook()
 	// start sBook
 	+b.SECTION.sBook.section#sBook&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sBook
-				
-			.row
+			+e.row.row
+				+e.txt-col.col-md-7.col-lg-5
+					+b.section-title
+						p Приглашаем Вас пройти тренинг Издательства Инфо-ДВД и&nbsp;Павла Крёза
+						h2
+							| Спекуляции дешевыми
+							br
+							| акциями на&nbsp;ОТС
+				+e.img-col.col
+					img.lazy(src="#" data-src="img/@2x/book-img.png" alt="")
+			+e.other-txt
+				ul
+					li Быстрый доступ к&nbsp;обучению
+					li Обновленная версия стратегии
+					li Автоматизация торговли
+					li Готовые наработки по&nbsp;акциям
+					li Расширенная поддержка в&nbsp;мастер-группе
+					li Прибыль в&nbsp;первый месяц торговли*
+					li Понятно даже пенсионерам
+					li Пошаговый алгоритм действий
+				p *Ученики, прошедшие первый поток тренинга, получили первую прибыль уже в первый месяц работы по стратегии.
+			+e.lower-convince.text-center
+				h4 Этот тренинг поможет Вам в&nbsp;кратчайшие сроки запустить удобный и&nbsp;невероятно простой источник дохода на&nbsp;рынке ОТС.
+				+e.A.btn(href='#') Я хочу участвовать!
 	// end sBook

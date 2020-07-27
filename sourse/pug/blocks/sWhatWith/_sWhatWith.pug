@@ -3,7 +3,43 @@ mixin sWhatWith()
 	+b.SECTION.sWhatWith.section#sWhatWith&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sWhatWith
-				
-			.row
+				h2 С чем конкретно Вы будете работать?
+			+e.row.row
+				+whatWhithItem(1, 'Рынок')
+					p Фондовый внебиржевой рынок&#160;OTC
+				+whatWhithItem(2, 'Инструменты')
+					p Акции
+				+whatWhithItem(3, 'Стратегия отбора', 'two-lined')
+					p Краткий фундаментальный анализ по чеклисту, поиск точки входа по уровням теханализа
+				+whatWhithItem(4, 'Стратегия торговли', 'two-lined')
+					p Портфельные спекуляции
+				+whatWhithItem(5, 'Способы автоматизации', 'two-lined')
+					p Алерты, отложенные ордера
+				+whatWhithItem(6, 'Брокер')
+					p Interactive Brokers*
+			+e.warning *К сожалению, брокер Interactive Brokers не открывает счета жителям Крыма и Беларуси.
+			+e.important-row.row
+				.col-xl-4
+					+e.import-img-bl
+						img.lazy(src='#' data-src='img/warning-img.svg' alt="")
+						span
+							| Важные
+							br
+							| нюансы
+				.col-md-6.col-xl-4
+					+e.important-item
+						+e.important-headline Время, затрачиваемое на&nbsp;анализ одной компании по&nbsp;стратегии Павла Крёза, составляет не&nbsp;более 5&nbsp;минут.
+						p Портфельные спекуляции&nbsp;&mdash; это означает, что мы&nbsp;не&nbsp;ведем активную торговлю и&nbsp;не&nbsp;следим за&nbsp;графиками. Мы&nbsp;покупаем портфель из&nbsp;выбранных по&nbsp;стратегии компаний, выставляем отложенные ордера на&nbsp;фиксацию прибыли и&nbsp;занимаемся своими делами. Когда акция в&nbsp;портфеле совершит рост в&nbsp;цене, прибыль фиксируется частями автоматически.
+				.col-md-6.col-xl-4
+					+e.important-item
+						+e.important-headline Мы&nbsp;работаем в&nbsp;категории сверхдешевых акций.
+						p Это акции стоимостью менее десятой доли цента. Мы&nbsp;покупаем их&nbsp;на&nbsp;самом дне. Им&nbsp;нипочем ни&nbsp;кризис, ни&nbsp;другие макроэкономические потрясения, потому что им&nbsp;ниже уже падать некуда.
 	// end sWhatWith
+
+mixin whatWhithItem(imgNum, headlineTxt, headlineclasses='')
+	.col-6.col-md-4.col-xxl-2
+		+e.item
+			+e.icon
+				img.lazy(src="#" data-src=`img/sWhatWith-${imgNum}.svg` alt="")
+			+e.headline(class=headlineclasses)=headlineTxt
+			block

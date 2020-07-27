@@ -1,9 +1,34 @@
 mixin sWhatOTS()
 	// start sWhatOTS
 	+b.SECTION.sWhatOTS.section#sWhatOTS&attributes(attributes)
-		.container
+		+e.section-bg
+			img.lazy(src="#" data-src="img/@2x/OTC-big-bg.png" alt="")
+		+e.container.container
 			+b.section-title.text-center
-				h2 sWhatOTS
-				
-			.row
+				h2 Что такое ОТС?
+			+e.row.row
+				.col-lg-6
+					+e.left-box
+						+e.left-box-bg
+							img.lazy(src="#" data-src="img/@2x/OTS-dolar.png" alt="")
+						h4
+							|Внебиржевой
+							br
+							|рынок ОТС
+						p
+							| OTC расшифровывается как
+							br
+							| Over-the-Counter, в&nbsp;дословном переводе
+							br
+							| &mdash;&nbsp;минуя прилавок. Это легальный рынок, на котором акции покупаются и&nbsp;продаются вне юрисдикций признанных фондовых бирж (таких как NYSE и&nbsp;NASDAQ).
+						p Роль биржи, а&nbsp;точнее площадки для торгов здесь выполняет OTC Markets Group&nbsp;&mdash; внебиржевая система торгов акциями. Это электронная система, которая отражает котировки брокеров/дилеров для ценных бумаг внебиржевого рынка
+				.col-lg-6.col-xl-5.offset-xl-1
+					+e.right-col
+						+e.right-col-item
+							h4 Как осуществляется выход на&nbsp;внебиржевой рынок?
+							p Точно также, как и&nbsp;на&nbsp;обычную биржу&nbsp;&mdash; с&nbsp;помощью лицензированного брокера. Мы&nbsp;работаем с&nbsp;Interactive Brokers&nbsp;&mdash; один из&nbsp;крупнейших международных брокеров с&nbsp;низкими комиссиями на&nbsp;ОТС и&nbsp;страховкой депозита на&nbsp;500 000$
+						+e.right-col-item
+							h4 Важно! OTC&nbsp;&mdash; это полностью легальный рынок, подпадающий под надзор строгих регуляторов.
+							p Нерыночные риски на&nbsp;рынке ОТС отсутствуют полностью, если&nbsp;Вы работаете через лицензированных брокеров.
+		block
 	// end sWhatOTS
