@@ -3,7 +3,31 @@ mixin sMoves()
 	+b.SECTION.sMoves.section#sMoves&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sMoves
-				
-			.row
+				h2 Как именно Вы будете работать?
+			+b.moves-row.row
+				+movesStep()
+					p Вы&nbsp;откроете и&nbsp;пополните брокерский счет в&nbsp;Interactive Brokers
+				+movesStep()
+					p Вы&nbsp;отберете список компаний для портфеля по&nbsp;шагам стратегии (или получите уже готовый проработанный список в&nbsp;мастер-группе)
+				+movesStep()
+					p  Вы&nbsp;купите в&nbsp;портфель те&nbsp;акции из&nbsp;списка, которые покажут точку входа по&nbsp;стратегии
+				+movesStep()
+					p По&nbsp;купленным акциям&nbsp;Вы сразу выставите отложенные ордера на&nbsp;фиксацию прибыли
+				+movesStep()
+					p  По&nbsp;акциям из&nbsp;проработанного списка, которые не&nbsp;дадут хорошую точку входа, Вы&nbsp;выставите алерты в&nbsp;терминале. Когда будет хорошая цена для покупки, Вы&nbsp;получите уведомление на&nbsp;телефон, email или компьютер
+				+movesStep()
+					p Занимаетесь своими делами, ждете роста стоимости акций и&nbsp;новых точек входа. Радуетесь, когда фиксируются прибыльные сделки
+			+e.other-content
+				+e.black-txt Как видите, Вы&nbsp;можете совмещать спекуляции дешевыми акциями на&nbsp;ОТС с&nbsp;абсолютно любой занятостью. На&nbsp;это практически не&nbsp;надо выделять дополнительного времени.
+				+e.blue-strip
+					+e.man-img
+						img.lazy(src="#" data-src="img/@2x/sMoves-man.png" alt="")
+					p На&nbsp;одной из&nbsp;открытых встреч с&nbsp;Павлом Крёзом мы&nbsp;подсчитали, что для успешной торговли на&nbsp;ОТС достаточно не&nbsp;более трех часов в&nbsp;неделю.
+				.text-center
+					+e.A.btn(href="#") Хочу научиться спекуляциям дешевыми акциями на ОТС!
 	// end sMoves
+
+mixin movesStep()
+	+e.col.col-lg-4
+		+e.content
+			block

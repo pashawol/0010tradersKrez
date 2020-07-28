@@ -5,9 +5,9 @@ mixin sSubtleties()
 			+b.section-title.text-center
 				h4 Такие акции живут своей жизнью и периодически совершают вот такие движения:
 			+e.slider
-				.subtitle-swiper-prev
+				.subtitle-swiper-prev.d-none.d-xl-flex
 					+icon('chevron-left')
-				.subtitle-swiper-next
+				.subtitle-swiper-next.d-none.d-xl-flex
 					+icon('chevron-right')
 				.swiper-container.subtitles-slider-js
 					.swiper-wrapper
@@ -18,7 +18,7 @@ mixin sSubtleties()
 						+subtitlesSlide(2)
 						+subtitlesSlide(3)
 			.text-center
-				+e.convince-txt Теперь Вы&nbsp;понимаете, что спекуляции дешевыми акциями на&nbsp;ОТС&nbsp;&mdash; это серьезный легальный источник дохода и&nbsp;никаких финансовых пирамид, бинарных опционов и&nbsp;прочей ереси здесь нет?
+				+e.convince-txt Теперь Вы&nbsp;понимаете, что спекуляции дешевыми акциями на&nbsp;ОТС&nbsp;&mdash; это серьезный легальный источник дохода и&nbsp;никаких финансовых пирамид, бинарных опционов&nbsp;и прочей ереси здесь нет?
 				+e.A.btn(href='#') Кликните, чтобы получить стратегию торговли на ОТС прямо сейчас!
 	// end sSubtleties
 
