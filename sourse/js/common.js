@@ -286,8 +286,25 @@ function eventHandler() {
 
 	//subtitles slider
 	let subtitleSlider = new Swiper('.subtitles-slider-js', {
-		slidesPerView: 3,
-		spaceBetween: 36,
+		loop: true,
+		breakpoints: {
+			1200 : {
+				slidesPerView: 3,
+				spaceBetween: 36,
+			},
+			992 : {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			576 : {
+				slidesPerView: 2,
+				spaceBetween: 30,
+			},
+			320 : {
+				slidesPerView: 1,
+				spaceBetween: 20,
+			}
+		},
 
 		//lazy
 		lazy: {

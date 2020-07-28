@@ -4,13 +4,13 @@
 	z-index: 2;
 
 
-	--sPB: #{rem(60)};
+	--sPB: #{rem(20)};
 	--sPT: #{rem(40)};
 
 	--sTPB: #{rem(40)};
 	@include media-breakpoint-up(lg){
 		--sPT: #{rem(48px)};
-		--sPB: #{rem(111)};
+		--sPB: #{rem(40)};
 
 		--sTPB: #{rem(60)};
 	}
