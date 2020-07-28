@@ -1,9 +1,22 @@
 mixin sGoldenLevel()
 	// start sGoldenLevel
 	+b.SECTION.sGoldenLevel.section#sGoldenLevel&attributes(attributes)
+		+e.section-bg
+			img.lazy(src='#' data-src="img/@2x/gold-lvl-bg.png" alt="")
 		.container
-			+b.section-title.text-center
-				h2 sGoldenLevel
-				
-			.row
+			+e.row.row
+				.col-lg-5.d-none.d-lg-block
+					+e.shield-img
+						img.lazy(src="#" data-src="img/shield.svg" alt="")
+				.col-lg-7
+					+b.section-title
+						+e.small-shield-img.d-lg-none
+							img.lazy(src="#" data-src="img/shield.svg" alt="")
+						h2
+							span Золотой уровень
+							|
+							| доверия от Инфо-ДВД
+					+e.txt
+						p Издательство Инфо-ДВД в&nbsp;лице основателя Издательства Анатолия Белоусова, директора Издательства Никиты Королева, куратора обучения Дениса Абросимова и&nbsp;автора Романа Романовича присваивает онлайн-тренингу &laquo;Умные инвестиции три-в-одном&raquo; максимальный рейтинг надежности.
+						p Это значит, что тема данного курса не&nbsp;вызывает ни&nbsp;малейших этических нареканий со&nbsp;стороны редколлегии Инфо-ДВД, а&nbsp;вероятность положительного результата от&nbsp;обучения/применения данных знаний, методик, программ (при неукоснительном соблюдении всех инструкций автора) близка к&nbsp;100%.
 	// end sGoldenLevel
