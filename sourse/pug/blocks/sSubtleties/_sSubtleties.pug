@@ -24,6 +24,6 @@ mixin sSubtleties()
 
 mixin subtitlesSlide(imgNum)
 	.swiper-slide
-		+e.A.slide-img(href='#')
+		+e.A.slide-img(href=`img/@2x/subtitle-img-j-${imgNum}.jpg` data-fancybox="graphImg")
 			img.swiper-lazy(src="#" data-src=`img/@2x/subtitle-img-j-${imgNum}.jpg` alt="")
 
