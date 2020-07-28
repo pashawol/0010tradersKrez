@@ -301,6 +301,15 @@ function eventHandler() {
 		},
 	});
 
+	$('.block-header-js').click(function () {
+		$(this).toggleClass('active');
+
+		$(this.parentElement).find('.block-content-js').slideToggle(function () {
+			$(this).toggleClass('active');
+		});
+
+	});
+
 	//end luckyone js
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
