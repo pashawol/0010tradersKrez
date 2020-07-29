@@ -24,8 +24,10 @@
 		border-radius: rem(20px);
 		display: block;
 		font-weight: 700;
-		width: rem(459px);
-		margin-left: auto;
+		@include media-breakpoint-up(md) {
+			width: rem(459px);
+			margin-left: auto;
+		}
 	}
 
 	&__text {
@@ -36,6 +38,7 @@
 		margin-bottom: rem(60);
 		margin-top: rem(70);
 	}
+	
 
 	&__btn {
 		@include mt;
@@ -51,7 +54,7 @@
 	&__item {
 		background-color: #fff;
 		box-shadow: 0px 94px 63px -51px rgba(0, 0, 0, 0.38);
-		border-radius: 20px;
+		border-radius: 19px;
 		color: $body-color;
 		position: relative;
 		max-width: rem(260px);

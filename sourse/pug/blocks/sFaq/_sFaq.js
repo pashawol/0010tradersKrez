@@ -1,5 +1,5 @@
-let sFaqVue = new Vue({
-		el: '#sFaq',
+let sFAQVue = new Vue({
+		el: '#sFAQ',
 		data: {
 			imgSRc: 'img/',
 		},
