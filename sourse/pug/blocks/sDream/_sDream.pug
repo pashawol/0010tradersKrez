@@ -3,7 +3,58 @@ mixin sDream()
 	+b.SECTION.sDream.section#sDream&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sDream
-				
-			.row
+				h2 Это мечта, а не заработок!
+				p В Книге Успеха учеников еще есть пустые страницы. Они ждут Ваших результатов!
+			+e.row.row
+				+sDreamItem(1)
+					+e.headline
+						| Это легко
+						br
+						| и доступно
+					p
+						| Новички, прошедшие обучение&nbsp;в апреле,
+						b уже в&nbsp;мае показали
+						|
+						| потрясающие результаты.
+				+sDreamItem(2)
+					+e.headline
+						| Малозатратно по
+						br
+						| времени
+					p
+						| Собрали портфель, выставили ордера и&nbsp;
+						b занимайтесь своими делами.
+				+sDreamItem(3)
+					+e.headline
+						| Это может повторить
+						br
+						| каждый
+					p
+						| Уже более
+						|
+						b 200 учеников
+						|
+						| прошли обучение и&nbsp;прямо сейчас зарабатывают деньги на&nbsp;ОТС.
+				+sDreamItem(4)
+					+e.headline
+						| Не нужен большой
+						br
+						| депозит
+					p
+						| Чтобы купить одну компанию&nbsp;в портфель достаточно
+						|
+						b 20-50$.
+						|
+						| Потенциально она способна принести прибыль
+						|
+						b 60-900$.
+			.text-center
+				+e.A.btn(href="#") Начать зарабатывать на ОТС прямо сейчас!
 	// end sDream
+
+mixin sDreamItem(imgNum, headlineTxt)
+	+e.col.col-sm-6.col-lg-3.text-center
+		+e.item-content
+			+e.icon-cont
+				img.lazy(src="#" data-src=`img/sDream-img-${imgNum}.svg` alt="")
+		block

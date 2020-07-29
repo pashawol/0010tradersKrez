@@ -1,7 +1,125 @@
+// start .sDream
+.sDream {
 
-	// start .sDream
-	.sDream {
-		 
+
+	--sPB: #{rem(30)};
+
+	--sPT: #{rem(40)};
+	--sTPB: #{rem(50)};
+	@include media-breakpoint-up(lg){
+		--sPT: #{rem(74px)};
+		--sTPB: #{rem(102px)};
+	}
+
+	.section-title{
+		h2{
+			color: $primary;
+			line-height: (50/40);
+
+			margin-bottom: rem(21px);
+		}
+		p{
+			font-size: rem(20);
+		}
+		p:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	&__row{
+		@include roww(40px);
+		counter-reset: list 0;
+
+		padding-bottom: rem(18px);
+	}
+	&__col{
+		padding-bottom: rem(60);
+		@include media-breakpoint-up(lg){
+			padding-bottom: rem(30);
+		}
+
+		position: relative;
+		list-style-type: none;
+
+		p{
+			max-width: 260px;
+			margin: 0 auto;
+		}
+
+		&:before {
+			counter-increment: list;
+			content: counter(list);
+
+			position: absolute;
+			z-index: 2;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+
+			width: rem(49px);
+			height: rem(49px);
+
+			background: linear-gradient(100.39deg, #F22525 -1.05%, #1A3F79 55.82%);
+			box-shadow: 0px 2px 25px rgba(90, 134, 235, 0.36);
+			border-radius: rem(5);
+
+			font-weight: bold;
+			font-size: rem(34px);
+			color: $white;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			//line-height: 1;
+		}
+	}
+	&__item-content{
+		background: linear-gradient(100.39deg, #F22525 -1.05%, #1A3F79 55.82%);
+		border-radius: 6px;
+
+		position: relative;
+		z-index: 0;
+		&:after{
+			content: '';
+			position: absolute;
+			z-index: 1;
+			width: calc(100% - 2px);
+			height: calc(100% - 2px);
+			background-color: $body-bg;
+			top: 1px;
+			left: 1px;
+			border-radius: 6px;
+		}
+
+		width: rem(166px);
+		height: rem(166px);
+		margin: 0 auto rem(36) auto;
+	}
+	&__icon-cont{
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-40%) translateY(-40%);
+
+	}
+	&__headline{
+		font-weight: bold;
+		font-size: rem(20px);
+		line-height: (25/20);
+		margin-bottom: rem(13);
+	}
+
+	//btn
+	&__btn{
+		@extend .btn-red-frame;
+	}
+	&__{}
+	&__{}
+	&__{}
+
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

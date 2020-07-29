@@ -3,7 +3,27 @@ mixin sAble()
 	+b.SECTION.sAble.section#sAble&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sAble
-				
-			.row
+				h2 Сколько Вы будете зарабатывать?
+				p На любом финансовом рынке попытки ответить на этот вопрос всегда обречены на провал.
+			+e.row.row
+				.col-lg-6
+					+e.txt-col-cont
+						p Даже совершая одни и&nbsp;те&nbsp;же сделки, просто повторяя друг за&nbsp;другом (а&nbsp;именно так и&nbsp;торгуют большинство участников мастер-группы), у&nbsp;всех участников получаются абсолютно разные результаты.
+						p
+							| Но&nbsp;главное, что все эти результаты
+							|
+							br.d-none.d-lg-block
+							| положительные!
+				.col-lg-6
+					+e.white-bl
+						p Мы&nbsp;собрали все отзывы и&nbsp;результаты учеников, которые они выкладывали в&nbsp;командном чате,&nbsp;в группе Инфоклуба и&nbsp;в&nbsp;качестве ежемесячного отчета о&nbsp;сделках, в&nbsp;единую Книгу Успеха учеников.
+						+e.every-month Каждый месяц 2020 года мы зарабатывали.
+						+e.look-txt Смотрите, как ученики Павла Крёза делают деньги:
+						+e.line-img
+							img.lazy(src="#" data-src="img/sAble-line.svg" alt="")
+			+e.book-bg
+				+e.A.book-img(href='https://krez.info-dvd.ru/students-book.pdf' target="blank")
+					img.lazy(src="#" data-src="img/@2x/pdf-book-sized.png" alt="")
+				+e.man-img
+					img.lazy(src="#" data-src="img/@2x/sAble-man.png" alt="")
 	// end sAble

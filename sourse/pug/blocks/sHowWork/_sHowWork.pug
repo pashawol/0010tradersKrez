@@ -3,7 +3,34 @@ mixin sHowWork()
 	+b.SECTION.sHowWork.section#sHowWork&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sHowWork
-				
-			.row
+				h2 Получится ли у Вас лично зарабатывать на ОТС?
+				p
+					| Мы&nbsp;не&nbsp;имеем права это Вам обещать.
+					|
+					b Но&nbsp;вот факт, которым мы&nbsp;гордимся:
+			+e.row.row
+				.col-lg-6
+					+e.hundred-precent
+						+e.hundr-img
+							img.lazy(src="#" data-src="img/howWork-precent.svg" alt="")
+						+e.hund-top-txt 100%
+						+e.hund-txt
+							| наших&nbsp;активных
+							br
+							| учеников
+							br
+							| зарабатывают!
+				+e.txt-col.col-lg-6
+					+e.txt-cont
+						p По&nbsp;итогам семи месяцев 2020 года в&nbsp;мастер-группе Павла Крёза среди активных учеников нет ни&nbsp;одного, который бы&nbsp;получил убытки!
+						p Среди тех, кто открыл реальный счет и&nbsp;начал торговлю&nbsp;на ОТС, абсолютно все участники мастер-группы торгуют&nbsp;в плюс и&nbsp;регулярно отчитываются о&nbsp;получении прибыли!
+					+e.question
+						+e.qustion-img
+							img.lazy(src="#" data-src="img/question-icon.svg" alt="")
+						+e.question-txt
+							span Вопрос с долей шутки:
+							p Как Вы&nbsp;думаете, есть&nbsp;ли у&nbsp;Вас шансы нарушить эту статистику и&nbsp;стать единственным неудачником из&nbsp;более 200&nbsp;учеников?
+			.text-center
+				+e.A.btn(href="#") Войти в команду успешных учеников
+
 	// end sHowWork
