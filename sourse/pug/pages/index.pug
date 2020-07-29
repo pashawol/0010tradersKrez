@@ -26,6 +26,9 @@ include ../blocks/sBecome/_sBecome.pug
 include ../blocks/sFaq/_sFaq.pug
 include ../blocks/sGoldenLevel/_sGoldenLevel.pug
 include ../blocks/sReadySource/_sReadySource.pug
+
+include ../blocks/sSpecProgram/_sSpecProgram.pug
+	//
 block variables
 	- let  mainPage= null
 block title
@@ -48,9 +51,10 @@ block pagecontent
 	+sDream
 	+sMillionaire
 	+sForAdults
-	+sRiskReward
+		+sRiskReward
 	+sCrisis
 	+sSpeculations
+	+sSpecProgram
 	+sAuthor
 	+sRews
 	+sPublicTransactions

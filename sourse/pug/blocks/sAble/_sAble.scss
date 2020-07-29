@@ -127,12 +127,14 @@
 			@include media-breakpoint-up(xl){
 				width: auto;
 			}
+			box-shadow: 0px 94px 63px -51px rgba(0, 0, 0, 0.38);
+
+			border-radius: rem(10);
+			@include media-breakpoint-up(md){
+				border-radius: rem(20);
+			}
 		}
 
-		@include mt();
-		&:hover{
-			transform: scale(1.05);
-		}
 	}
 	&__man-img{
 		@include tear(100vw);

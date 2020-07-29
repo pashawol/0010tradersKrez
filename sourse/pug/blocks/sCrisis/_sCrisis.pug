@@ -3,7 +3,17 @@ mixin sCrisis()
 	+b.SECTION.sCrisis.section#sCrisis&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sCrisis
-				
-			.row
+				h2 А что будет с этим заработком во время кризиса?
+				p Мы не знаем будущего, но у нас есть история фактически проведенных сделок на ОТС.
+			+e.row.row
+				.col-lg-6
+					+e.txt
+						p В&nbsp;2020-м году на&nbsp;мировых рынках были и&nbsp;периоды роста, и&nbsp;период сильного падения в&nbsp;марте.
+						p И&nbsp;в&nbsp;каждый из&nbsp;этих месяцев в&nbsp;нашем портфеле были компании, которые показывали рост, и&nbsp;мы&nbsp;по&nbsp;ним фиксировали прибыль.
+				.col-lg-6
+					+e.color-box
+						+pic('crisis-box-bg.png')(class="sCrisis__box-bg")
+						p Даже 9&nbsp;марта&nbsp;&mdash; ровно&nbsp;в тот в&nbsp;день, когда все мировые рынки рухнули из-за ситуации с&nbsp;нефтью, мы&nbsp;зафиксировали рост по&nbsp;акциям компании WDLF +257%!
+
+
 	// end sCrisis

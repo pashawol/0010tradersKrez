@@ -1,9 +1,39 @@
 mixin sSpeculations()
 	// start sSpeculations
-	+b.SECTION.sSpeculations.section#sSpeculations&attributes(attributes)
+	+b.sSpeculations.section#sSpeculations&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sSpeculations
-				
-			.row
+				h4 Стратегия спекуляций дешевыми акциями на&nbsp;ОТС живет совершенно своей жизнью и&nbsp;практически не&nbsp;реагирует на&nbsp;внешние экономические потрясения.
+				p И вот 5 причин, почему это происходит:
+			+e.row.row
+				+speculationItem()
+					p
+						b Мы&nbsp;работаем с&nbsp;акциями, которые по&nbsp;своей стоимости находятся на&nbsp;самом дне,
+						|
+						| им&nbsp;просто уже дальше некуда падать
+				+speculationItem()
+					p
+						b На&nbsp;ОТС нет крупных капиталов,
+						|
+						| которые будут массово выводиться из&nbsp;рынка во&nbsp;время кризиса.
+				+speculationItem()
+					p
+						b Суть стратегии заключается в&nbsp;поиске недооцененных компаний
+						|
+						| с&nbsp;большим фундаментальным потенциалом роста
+				+speculationItem()
+					p
+						b Акции находятся в Вашем портфеле
+						|
+						| до тех пор, пока они не покажут рост стоимости
+				+speculationItem()
+					p
+						b Стратегия уже доказала в практической торговле,
+						|
+						| что даже в сам момент падения мировых рынков, компании в портфеле способны расти и приносить прибыль.
 	// end sSpeculations
+
+mixin speculationItem()
+	+e.col-part-5.col-12
+		+e.content
+			block

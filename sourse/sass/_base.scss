@@ -440,7 +440,7 @@ iframe {
 
 	border: none;
 	background: linear-gradient(180deg, #FF2727 0%, #9F1212 100%);
-	padding: 20px 36px;
+	padding: rem(20px) rem(36px);
 	border-radius: rem(10);
 
 	font-weight: bold;
@@ -449,7 +449,6 @@ iframe {
 
 	@include mt();
 	position: relative;
-	//box-shadow: 0 4px 0 #2974b0, 0px rem(20) rem(20) 0px rgba($color: $primary, $alpha: .45);
 
 	box-shadow: 0px 29px 29px -18px rgba(20, 20, 20, 0.37), inset 0px -7px 0px rgba(0, 0, 0, 0.25);
 	&:hover{
