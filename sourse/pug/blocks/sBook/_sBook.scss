@@ -6,7 +6,7 @@
 	}
 
 	--sPB: #{rem(30)};
-	--sPT: #{rem(30)};
+	--sPT: #{rem(50)};
 	@include media-breakpoint-up(lg){
 		--sPT: #{rem(61px)};
 		--sPB: #{rem(67)};
@@ -115,6 +115,7 @@
 		position: relative;
 		z-index: 2;
 		h4{
+			font-weight: bold;
 			line-height: (38/30);
 			margin-bottom: rem(31);
 			@include media-breakpoint-down(sm){

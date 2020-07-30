@@ -128,7 +128,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02.jpg);"></div>')
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -170,6 +170,20 @@ function eventHandler() {
 
 		return false;
 	});
+
+	//.menu-mobile__link
+	$(".menu-mobile__link").click(function () {
+		const elementClick = $(this).attr("href");
+		const destination = $(elementClick).offset().top - $('.top-nav').outerHeight();
+
+		JSCCommon.closeMenu();
+		window.setTimeout(function () {
+			$('html, body').animate({ scrollTop: destination }, 1100);
+		}, 50);
+
+		return false;
+	});
+
 
 	let defaultSl = {
 		spaceBetween: 0,
@@ -302,19 +316,11 @@ function eventHandler() {
 
 		if (hookBot/2 > window.scrollY || window.scrollY >  hookBot * 1.2){
 			$(fixedStrip).removeClass('hidden-top');
-			console.log('vis');
 		}
 		else{
 			$(fixedStrip).addClass('hidden-top');
-			console.log('inv');
 		}
-
-		console.log(window.scrollY, hookBot);
-
 	}
-
-
-
 
 	function calcVh(v) {
 		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);

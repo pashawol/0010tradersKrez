@@ -4,10 +4,10 @@
 	position: relative;
 	z-index: 19;
 
-	--sPT: #{rem(126px)};
-	--sPB: #{rem(24px)};
+	--sPT: #{rem(40px)};
+	--sPB: #{rem(0px)};
 
-	--sTPB: #{rem(70px)};
+	--sTPB: #{rem(40px)};
 	@include media-breakpoint-up(lg){
 		--sPT: #{rem(126px)};
 		--sPB: #{rem(24px)};
