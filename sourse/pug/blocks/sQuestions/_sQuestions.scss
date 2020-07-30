@@ -1,0 +1,186 @@
+// start .sQuestions
+.sQuestions {
+	position: relative;
+	color: $white;
+
+	padding: rem(30) 0;
+	@include media-breakpoint-up(lg){
+		padding: rem(59) 0;
+	}
+
+	&__section-bg{
+		background-color: $primary;
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.section-title{
+		@include media-breakpoint-up(sm){
+			padding-bottom: rem(20);
+		}
+		@include media-breakpoint-up(lg){
+			padding-bottom: rem(41px);
+		}
+		h2{
+			margin-bottom: rem(20);
+			color: $white;
+		}
+		p{
+			font-weight: bold;
+			line-height: (25/20);
+
+			font-size: rem(16px);
+			@include media-breakpoint-up(sm){
+				font-size: rem(20px);
+				padding-left: 3px;
+			}
+		}
+	}
+	//row
+	&__row{
+
+		@include media-breakpoint-up(xl){
+			position: relative;
+			margin-right: -43px !important;
+			@include roww(0px);
+		}
+		margin-bottom: 18px;
+	}
+	&__question-col{
+		padding-bottom: rem(20);
+		display: flex;
+		align-items: center;
+		@include media-breakpoint-up(sm){
+			display: block;
+			padding-bottom: rem(30);
+		}
+
+
+		@include media-breakpoint-up(lg){
+			padding-bottom: rem(45);
+		}
+
+	}
+	&__col-img{
+		margin-right: 15px;
+		width: 90px;
+		@include media-breakpoint-up(sm){
+			width: auto;
+			margin-bottom: rem(16);
+			margin-right: 0;
+		}
+
+		height: 90px;
+		display: flex;
+		align-items: center;
+
+		img{
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	&__col-txt{
+		br{
+			display: none;
+			@include media-breakpoint-up(sm){
+				display: block;
+			}
+		}
+
+		line-height: 1.5;
+
+		font-size: rem(16px);
+		@include media-breakpoint-up(sm){
+			font-size: rem(20px);
+		}
+	}
+	//lower txt
+	&__lower-txt{
+		max-width: 1007px;
+		p{
+			font-weight: 500;
+			line-height: 1.5;
+
+			font-size: rem(16px);
+			@include media-breakpoint-up(sm){
+				font-size: rem(20px);
+			}
+
+			margin-bottom: rem(30px);
+		}
+		p:last-child{
+			margin-bottom: 0;
+		}
+
+		padding-bottom: rem(30);
+		@include media-breakpoint-up(lg){
+			padding-bottom: rem(101px);
+		}
+	}
+
+	//
+	.form-cont{
+		&__form-txt{
+			@include media-breakpoint-down(lg){
+				max-width: 100%;
+			}
+		}
+	}
+
+	//policy
+	&__policy{
+		font-weight: 500;
+		font-size: rem(12px);
+		line-height: (15/12);
+		text-align: center;
+		color: rgba($white, .5);
+
+		a{
+			@include mt();
+			text-decoration: underline;
+			color: rgba($white, .5);
+			&:hover{
+				text-decoration: none;
+				color: $white;
+			}
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sQuestions

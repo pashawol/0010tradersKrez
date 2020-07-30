@@ -308,6 +308,7 @@
 		margin-bottom: rem(21);
 	}
 	&__num-txt{
+		white-space: nowrap;
 		display: inline-block;
 		padding: rem(10) rem(34);
 		background: $border-color;

@@ -128,14 +128,14 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
- 
+ 		if (document.body.classList.contains('page-without-menu-js')) return
 		// скрывает моб меню
 
 		const topH = document.querySelector('header').scrollHeight;
@@ -292,6 +292,7 @@ function eventHandler() {
 		let footerTop = $('.footer')[0].getBoundingClientRect().top + $(window)['scrollTop']();
 		let windowHeight = calcVh(100);
 
+		//positions
 		if (hookBot > window.scrollY){
 			$(fixedStrip).removeClass('fixed');
 		}
@@ -299,7 +300,21 @@ function eventHandler() {
 			$(fixedStrip).addClass('fixed');
 		}
 
+		if (hookBot/2 > window.scrollY || window.scrollY >  hookBot * 1.2){
+			$(fixedStrip).removeClass('hidden-top');
+			console.log('vis');
+		}
+		else{
+			$(fixedStrip).addClass('hidden-top');
+			console.log('inv');
+		}
+
+		console.log(window.scrollY, hookBot);
+
 	}
+
+
+
 
 	function calcVh(v) {
 		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -349,6 +364,67 @@ function eventHandler() {
 
 	});
 
+
+	function tikTak(parentQselector){
+		//html elements
+		let parent = document.querySelector(parentQselector);
+		if (!parent) return
+
+		let days = parent.querySelector('.days');
+		let hours = parent.querySelector('.hours');
+		let minutes = parent.querySelector('.minutes');
+		let seconds = parent.querySelector('.seconds');
+
+		//date elements
+		let now = new Date();
+
+		// d === days.innerHtml + now.getDate... others the same way
+		let d = getTime(days, now.getDate());
+		let h = getTime(hours, now.getHours());
+		let m = getTime(minutes, now.getMinutes());
+		let s = getTime(seconds, now.getSeconds());
+
+		let targetDate = new Date(now.getFullYear(), now.getMonth(), d, h, m, s);
+
+		//interval
+		tikTakReadOut(parent, targetDate, ThisReadOutID, days, hours, minutes, seconds);
+		let ThisReadOutID = window.setInterval(tikTakReadOut.bind(null,parent, targetDate, ThisReadOutID, days, hours, minutes, seconds), 1000);
+	}
+	tikTak('.timer-box-js');
+	//additional funcs to tikTak
+
+	function tikTakReadOut(parent,targetDate, ReadOutID, days, hours, minutes, seconds){
+		let now = new Date();
+		let timeLeft = (targetDate - now) / 1000;
+
+		if (timeLeft < 1) {
+			window.clearInterval(ReadOutID);
+			//to do something after timer ends
+			$(parent).fadeOut();
+		}
+
+		days.innerHTML = Math.floor(timeLeft / 60 / 60 / 24);
+		timeLeft = ((timeLeft / 60 / 60 / 24) - Math.floor(timeLeft / 60 / 60 / 24)) * 60 * 60 * 24;
+
+		hours.innerHTML = Math.floor(timeLeft / 60 / 60);
+		timeLeft = ((timeLeft / 60 / 60) - Math.floor(timeLeft / 60 / 60)) * 60 * 60;
+
+		minutes.innerHTML = Math.floor((timeLeft / 60));
+		timeLeft = ((timeLeft / 60) - Math.floor((timeLeft / 60))) * 60;
+
+		seconds.innerHTML = Math.floor(timeLeft);
+	}
+
+	function getTime(htmlEl, currentTimeItem) {
+		let timeItem = Number(htmlEl.innerHTML);
+		if (timeItem) {
+			timeItem += currentTimeItem;
+		}
+		else {
+			timeItem = currentTimeItem;
+		}
+		return timeItem
+	}
 	//end luckyone js
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;

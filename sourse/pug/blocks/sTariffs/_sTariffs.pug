@@ -1,0 +1,67 @@
+mixin sTariffs()
+	// start sTariffs
+	+b.SECTION.sTariffs.section#sTariffs&attributes(attributes)
+		block
+		+pic('sTarif-left-bg.png')(class="sTariffs__left-bg")
+		+pic('sTarif-right-bg.png')(class="sTariffs__right-bg")
+		+e.page-cont.container
+			+b.section-title
+				h2 Выберите удобный пакет участия в тренинге
+			+e.table-row.row
+				+priceTableHeader('Эконом', 'Мастер', 'VIP')
+				+priceTableLine('I часть. Основная программа тренинга. Безлимитный доступ к материалам')
+				+priceTableLine('II часть. Онлайн-занятия тренинга. Доступ на прямой эфир и безлимитный доступ к записям занятий.')
+				+priceTableLine('Поддержка и обратная связь от автора в группе и на онлайн-занятиях', 'до 25.09.2020', 'до 25.12.2020', 'до 25.12.2020')
+				+priceTableLine('Мастер-группа Павла Крёза', '-' , '3 месяца' ,'3 месяца')
+				+priceTableLine('Продление мастер-группы по льготной стоимости', '-' , '+' ,'-')
+				+priceTableLine('Индивидуальные скайп-сессии с автором после окончания программы', '-', '-', '6 сессий')
+				+priceTableLine('Индивидуальная поддержка от автора в скайпе', '-', '-', '3 месяца')
+				+strokedLine('Базовая цена пакета', '29 000' , '42 000' ,'140 000')
+				+priceTableLine('Ваша цена сегодня', '18 000' , '26 000' ,'80 000')
+				+priceTableFooter('Выбрать Эконом', 'Выбрать Мастер', 'Выбрать VIP')
+			+e.timer-row.row
+				.col-lg-6
+					+e.timer-headline
+						| ПОЛУЧИТЕ ДОСТУП
+						|
+						br.d-none.d-xl-block
+						| ПРЯМО СЕЙЧАС!
+					+e.timer-txt Доступ к&nbsp;материалам&nbsp;I части тренинга будет открыт Вам&nbsp;через одну минуту после оплаты.
+				+e.timer-col.col
+					+e.timer-col-txt
+						p Сегодня действуют максимальные скидки на пакеты участия!
+						p Скидка сгорит через:
+					+e.timer-box.timer-box-js
+						span.days 12
+						span.hours 20
+						span.minutes 20
+						span.seconds 20
+
+	// end sTariffs
+
+mixin priceTableHeader(base='base',master='master', VIP='VIP')
+	+e.item-txt-col.col-xl-5.col-md-6.col-12.header-txt-col.d-none.d-md-block
+	+e.val-col.offset-xl-1.col-md-2.col-4.base-col.header-col=base
+	+e.val-col.col-md-2.col-4.master-col.header-col.active=master
+	+e.val-col.col-md-2.col-4.vip-col.header-col=VIP
+
+mixin priceTableLine(headline='headline', base='+',master='+', VIP='+')
+	+e.item-txt-col.col-xl-5.col-md-6.col-12=headline
+	+e.val-col.offset-xl-1.col-md-2.col-4=base
+	+e.val-col.col-md-2.col-4=master
+	+e.val-col.col-md-2.col-4=VIP
+
+mixin strokedLine(headline='headline', base='+',master='+', VIP='+')
+	+e.item-txt-col.col-xl-5.col-md-6.col-12=headline
+	+e.val-col.offset-xl-1.col-md-2.col-4.stroked=base
+	+e.val-col.col-md-2.col-4.stroked=master
+	+e.val-col.col-md-2.col-4.stroked=VIP
+
+mixin priceTableFooter(base='base',master='master', VIP='VIP')
+	+e.item-txt-col.col-xl-5.col-md-6.col-12.footer-txt-col.d-none.d-md-block
+	+e.val-col.offset-xl-1.col-md-2.col-4.footer-col
+		+e.A.chose-btn(href="#")=base
+	+e.val-col.col-md-2.col-4.footer-col
+		+e.A.chose-btn(href="#")=master
+	+e.val-col.col-md-2.col-4.footer-col
+		+e.A.chose-btn(href="#")=VIP
