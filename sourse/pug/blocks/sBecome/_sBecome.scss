@@ -41,8 +41,12 @@
 		@extend .h2;
 		border: solid 1px $primary;
 		border-radius: 50%;
-		width: 81px;
-		height: 81px;
+		width: rem(58);
+		height: rem(58);
+		@include media-breakpoint-up(md) {
+			width: rem(81px);
+			height: rem(81px);
+		}
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -59,7 +63,7 @@
 		&::before {
 			content: '';
 			width: 1px;
-			height: 50%;
+			height: 60%;
 			@include media-breakpoint-down(lg) {
 				border-left: 1px dashed $primary;
 			}
