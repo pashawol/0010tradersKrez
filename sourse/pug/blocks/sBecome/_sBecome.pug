@@ -2,8 +2,28 @@ mixin sBecome()
 	// start sBecome
 	+b.SECTION.sBecome.section#sBecome&attributes(attributes)
 		.container
+			+pic('sBecome-bg.png')(class="d-none d-lg-block")
 			+b.section-title.text-center
-				h2 sBecome
-				
-			.row
+				h2 Как стать участником тренинга Инфо-ДВД и&nbsp;Павла Крёза &laquo;Спекуляции дешевыми акциями на&nbsp;ОТС&raquo;?
+			+e.row.row
+				mixin step(i,text)
+					+e.step&attributes(attributes)
+						+e.numb= i
+						+e.text= text
+						block
+
+				.col-lg-4
+					+step('1','Оставьте заявку на участие. Заполните форму и нажмите кнопку «Продолжить».')
+				.col-lg-4
+					+step('2','Вам откроется страница с тарифами и доступными сейчас скидками')
+				.col-lg-4
+					+step('3','Если необходимо, Вас проконсультирует менеджер Инфо-ДВД по указанному Вами номеру телефона')
+				.col-lg-4
+				.col-lg-4.order-lg-last
+					+step('4','Выберите тариф участия, оплатите его стоимость')
+				.col-lg-4
+					+step('5','Уже через одну минуту после оплаты Вам откроется доступ в закрытый раздел группы тренинга с обучающими материалами')(class="dashed-none")
+						//- +pic('sBecome-arrow.png')(class="d-lg-none")
+			+form-cont()
+			+polite-2()
 	// end sBecome

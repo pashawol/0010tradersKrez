@@ -3,7 +3,15 @@ mixin sPublicTransactions()
 	+b.SECTION.sPublicTransactions.section#sPublicTransactions&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sPublicTransactions
-				
+				h2 Публичные сделки Павла Крёза 
+				.h4 за январь – июль 2020
+			p Каждая из&nbsp;этих сделок открывалась и&nbsp;закрывалась публично, на&nbsp;глазах у&nbsp;участников мастер-группы, которые тоже участвовали в&nbsp;этих сделках.
 			.row
+				.col-lg-6
+					+e.transactions(href=`img/@2x/PublicTransactions-2.png` data-fancybox=`Transactions`)
+						+pic('PublicTransactions-1.png')
+				.col-lg-6
+					+e.transactions(href=`img/@2x/PublicTransactions-2.png` data-fancybox=`Transactions`)
+						+pic('PublicTransactions-2.png')
+			//- +e.btn(href="#") Хочу повторить эти результаты! 
 	// end sPublicTransactions

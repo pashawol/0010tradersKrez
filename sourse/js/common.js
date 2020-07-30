@@ -128,7 +128,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -202,10 +202,31 @@ function eventHandler() {
 		touchRatio: 0.2,
 		slideToClickedSlide: true,
 		freeModeMomentum: true,
-
 	});
 	// modal window
 
+	let studentsSlider = new Swiper('.students-slider-js', {
+		slidesPerView: 1,
+		loop: true,
+		autoHeight: true,
+		spaceBetween: 20,
+		//nav
+		navigation: {
+			nextEl: '.sliderRews-next',
+			prevEl: '.sliderRews-prev',
+		},
+
+		//pugin
+		pagination: {
+			el: $(this).find('.swiper-pugin'),
+			clickable: true,
+		},
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			//loadPrevNextAmount: 2,
+		},
+	});
  
 
 	var gets = (function () {

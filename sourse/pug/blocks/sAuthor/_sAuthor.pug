@@ -1,9 +1,25 @@
 mixin sAuthor()
 	// start sAuthor
 	+b.SECTION.sAuthor.section#sAuthor&attributes(attributes)
+		+pic('sAutor-bg.png')(class="picture-bg")
 		.container
-			+b.section-title.text-center
-				h2 sAuthor
 				
 			.row
+				.col-lg-6
+					+b.section-title
+						h2 Автор и ведущий тренинга Павел Крёз
+					ul
+						li Частный инвестор.
+						li Организатор и&nbsp;руководитель команды инвестиционных&nbsp;аналитиков.
+						li Автор Инфо-ДВД, ведущий закрытого сообщества инвесторов и&nbsp;мастер-группы.
+						li С&nbsp;2004 по&nbsp;2016 год работал в&nbsp;банковской сфере, сделал&nbsp;успешную карьеру в&nbsp;одном из&nbsp;крупнейших федеральных банков.
+						li Специалист по&nbsp;работе с&nbsp;предприятиями сегмента крупного и&nbsp;крупнейшего бизнеса.
+					p По&nbsp;мнению клиентов, Павел Крез&nbsp;&mdash; один из&nbsp;самых компетентных и&nbsp;востребованных авторов издательства Инфо-ДВД, умеющий доносить даже&nbsp;самые сложные вещи простым языком!
+				+e.col.col-lg-6
+					+e.autor
+						+pic('autor.png')
+					+e.credo Кредо&nbsp;
+						span.d-md-none -&nbsp;
+						span инвестиции с минимальными рисками
+
 	// end sAuthor

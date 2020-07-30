@@ -31,3 +31,26 @@ mixin movesStep()
 	+e.col.col-lg-4
 		+e.content
 			block
+
+
+mixin sMoves-become()
+	// start sMoves
+	+b.SECTION.sMoves--become.section#sMoves&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Как стать участником тренинга Инфо-ДВД и&nbsp;Павла Крёза &laquo;Спекуляции дешевыми акциями на&nbsp;ОТС&raquo;?
+			+b.moves-row.row
+				+movesStep()
+					p Оставьте заявку на&nbsp;участие. Заполните форму и&nbsp;нажмите кнопку &laquo;Продолжить&raquo;.
+				+movesStep()
+					p Вам откроется страница с&nbsp;тарифами и&nbsp;доступными сейчас скидками
+				+movesStep()
+					p Если необходимо, Вас проконсультирует менеджер Инфо-ДВД по&nbsp;указанному Вами номеру телефона
+				+movesStep()
+					p Выберите тариф участия, оплатите его стоимость
+				+movesStep()
+					p Уже через одну минуту после оплаты Вам откроется доступ в&nbsp;закрытый раздел группы тренинга с&nbsp;обучающими материалами
+				//- +movesStep()
+				//- 	p Занимаетесь своими делами, ждете роста стоимости акций и&nbsp;новых точек входа. Радуетесь, когда фиксируются прибыльные сделки
+			+form-cont()
+			+polite-2()

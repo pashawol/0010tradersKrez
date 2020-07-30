@@ -1,9 +1,42 @@
 mixin sRews()
 	// start sRews
-	+b.SECTION.sRews.section#sRews&attributes(attributes)
+	+b.sRews#sRews&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sRews
-				
-			.row
+				h4 Об этом говорят их многочисленные отзывы
+			+b.sliderRews
+				.sliderRews-prev
+					img.lazy(src="#" data-src="img/chevron-left.svg", alt="")
+				.sliderRews-next
+					img.lazy(src="#" data-src="img/chevron-right.svg", alt="")
+				.swiper-container.students-slider-js
+					.swiper-wrapper
+						mixin slide(i)
+							.swiper-slide
+								+e.slide
+									a(href=`img/@2x/${i}` data-fancybox=`review`)
+										img.swiper-lazy.res-i(src="#" data-src=`img/@2x/${i}`, alt="")
+						+slide('Image1191121042020.png')
+						+slide('Image3041908122019.png')
+						+slide('Image3331027122019.png')
+						+slide('Image5051908122019.png')
+						+slide('Image6422013072020.png')
+						+slide('Image6501308012020.png')
+						+slide('Image7061908122019.png')
+						+slide('Image8061908122019.png')
+						+slide('Image9361924042020.png')
+						+slide('Image10081908122019.png')
+						+slide('Image10441924042020.png')
+						+slide('Image11411908122019.png')
+						+slide('Image12411908122019.png')
+						+slide('Image13421908122019.png')
+						+slide('Image15421908122019.png')
+						+slide('Image16431908122019.png')
+						+slide('Image17431908122019.png')
+						+slide('ot_4.png')
+						+slide('ot_27.png')
+						+slide('ot_37.png')
+						+slide('ot_42.png')
+						+slide('review8.jpg')
+					.swiper-pugin
 	// end sRews

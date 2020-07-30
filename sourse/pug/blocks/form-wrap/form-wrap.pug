@@ -75,3 +75,25 @@ mixin polite()
 	+e.polite
 		+in-c()(checked)
 			+e.SMALL.text.text-secondary Согласен на обработку и хранение моих персональных данных в соответствии с условиями
+
+mixin polite-2()
+	+e.polite
+		| Заполняя форму Вы соглашаетесь с условиями
+		|
+		a( href="https://info-dvd.ru/bbm/../../oferta?popup=1" target="_blank") пользовательского соглашения
+
+mixin form-cont()
+	+b.form-cont#form-cont
+		//- if block
+		//- 	block
+		//- else
+		+e.text
+			+e.form-title Успейте оставить заявку на&nbsp;участие в тренинге
+			+e.form-txt Введите свои данные прямо сейчас
+		+e.man-img
+			img.lazy(src='#' data-src="img/@2x/form-man.png" alt="")
+		+form-wrap()
+			+input('Ваше имя', 'text', '', 'fullname')(required)
+			+input('+7 ( ____ ) ____ - ___ - ___', 'tel','', 'phone')(required)
+			+input('E-mail (необязательно)', 'email','','email')
+			+e.BUTTON.submit-btn(type="submit") Получить доступ в мастер-группу

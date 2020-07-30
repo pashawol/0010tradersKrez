@@ -128,8 +128,8 @@ function eventHandler() {
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>')
+	// /добавляет подложку для pixel perfect
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
@@ -191,6 +191,28 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeModeMomentum: true
 	})); // modal window
+
+	var studentsSlider = new Swiper('.students-slider-js', {
+		slidesPerView: 1,
+		loop: true,
+		autoHeight: true,
+		spaceBetween: 20,
+		//nav
+		navigation: {
+			nextEl: '.sliderRews-next',
+			prevEl: '.sliderRews-prev'
+		},
+		//pugin
+		pagination: {
+			el: $(this).find('.swiper-pugin'),
+			clickable: true
+		},
+		//lazy
+		lazy: {
+			loadPrevNext: true //loadPrevNextAmount: 2,
+
+		}
+	});
 
 	var gets = function () {
 		var a = window.location.search;

@@ -1,7 +1,131 @@
+// start .sAuthor
+.sAuthor {
+	position: relative;
+	padding-bottom: calc(var(--sPB) / 1.9);
 
-	// start .sAuthor
-	.sAuthor {
-		 
+	.section-title {
+		padding-bottom: calc(var(--sTPB) / 2.2);
+	}
+
+	h2 {
+		color: $primary;
+	}
+
+	li {
+		list-style: none;
+		position: relative;
+		@extend .h5;
+		padding-left: rem(20);
+		margin-bottom: .5rem;
+		@include media-breakpoint-up(sm) {
+			padding-left: rem(28);
+			margin-bottom: 1.2rem;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: #3741A1;
+			top: rem(13);
+			left: 0;
+
+		}
+	}
+
+	.picture-bg {
+		@include media-breakpoint-down(lg) {
+			display: flex;
+			align-items: flex-end;
+			padding-bottom: 20%;
+		}
+	}
+
+	ul {
+		margin-bottom: rem(30);
+		@include media-breakpoint-up(sm) {
+			margin-bottom: rem(49);
+		}
+	}
+
+	p {
+		@extend .h5;
+		font-weight: bold;
+		max-width: rem(470px);
+		line-height: 1.25;
+		@include media-breakpoint-down(lg) {
+			margin-bottom: rem(30);
+		}
+	}
+
+	&__credo {
+		background: #FFFFFF;
+		box-shadow: 0px 20px 63px -26px rgba(0, 0, 0, 0.38);
+		border-radius: 10px;
+		@include media-breakpoint-up(md) {
+			display: flex;
+			justify-content: space-between;
+		}
+		@include media-breakpoint-down(md) {
+			text-align: center;
+		}
+		max-width: rem(660);
+		padding: rem(25) rem(42) rem(20) rem(27);
+		@include media-breakpoint-up(xl) {
+			margin-right: rem(-30);
+		}
+		@extend .h5;
+		color: $primary;
+		font-weight: bold;
+		position: relative;
+		&::before {
+			@include media-breakpoint-up(md) {
+			content: '';
+			width: 9%;
+			left: 20%;
+			@include media-breakpoint-up(xl) {
+				width: 12%;
+				left: 16%;
+			}
+			height: 1px;
+			background-color: $body-color;
+			position: absolute;
+			top: rem(39);
+			}
+		}
+
+		span {
+			color: $body-color;
+			@include media-breakpoint-up(md) {
+				margin-left: 14%;
+			}
+		}
+	}
+	
+	&__col {
+		@include media-breakpoint-up(xl) {
+			padding-right: 0;
+			margin-top: rem(-8);
+		}
+	}
+
+	&__autor {
+		picture {
+			max-height: rem(400);
+			@include media-breakpoint-up(md) {
+				max-height: rem(590);
+			}
+			text-align: center;
+			img {
+				max-width: rem(300);
+				height: 100%;
+				@include media-breakpoint-up(md) {
+					max-width: rem(460);
+				}
+			}
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

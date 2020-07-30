@@ -1,5 +1,10 @@
 // start .sFAQ
 .sFAQ {
+	margin-top: rem(-255);
+	padding-top: rem(300) !important;
+	@include media-breakpoint-up(md) {
+		padding-top: rem(330) !important;
+	}
 	overflow: hidden;
 	position: relative;
 	background: linear-gradient(146.58deg, #3741A1 10.12%, #152085 74.53%);
@@ -94,7 +99,7 @@
 		@extend .link-primary;
 		font-weight: bold;
 		line-height: (38/30);
-		color: #fff;
+		color: #fff !important;
 
 		font-size: rem(18px);
 		@include media-breakpoint-up(sm){
