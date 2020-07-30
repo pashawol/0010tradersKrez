@@ -1,0 +1,53 @@
+mixin sAddAsist()
+	// start sAddAsist
+	+b.SECTION.sAddAsist.section#sAddAsist&attributes(attributes)
+		.container
+			+b.section-title
+				p Нужна дополнительная поддержка?
+				h2 Выберите тариф с личным куратором
+			+e.row.row
+				+sAddAsistItem()
+					p
+						b Личный куратор&nbsp;&mdash; сотрудник Службы Заботы о&nbsp;Клиентах
+						|
+						| Издательства Инфо-ДВД.
+				+sAddAsistItem()
+					p
+						b Личный куратор согласует с&nbsp;Вами время созвона один-два раза в&nbsp;неделю
+						|
+						| (в&nbsp;зависимости от&nbsp;Ваших пожеланий), на&nbsp;которых&nbsp;Вы сможете в&nbsp;личном разговоре получить поддержку по&nbsp;шагам тренинга.
+				+sAddAsistItem()
+					p
+						b Личный куратор поможет Вам разобраться с&nbsp;техническими деталями,
+						|
+						| открытием счета у&nbsp;брокера, работой в&nbsp;терминале и&nbsp;т.д.
+				+sAddAsistItem()
+					p
+						b Личный куратор будет контролировать процесс Вашего обучения
+						|
+						| и&nbsp;не&nbsp;позволит Вам сойти с&nbsp;дистанции!
+				+sAddAsistBlueItem('Эконом', '2 недели', 26)
+				+sAddAsistBlueItem('Мастер', '1 месяц', 36)
+				+sAddAsistBlueItem('Мастер', '3 месяца', 48)
+	// end sAddAsist
+mixin sAddAsistBlueItem(classTxt, timeTxt, price)
+	+e.blue-col.col-lg-4.text-center
+		+e.blue-box
+			+e.blue-cont
+				+e.class-txt=classTxt
+				+e.time-txt=`+ куратор ${timeTxt}`
+				+e.options=`Все опции тарифа ${classTxt}`
+				+e.curator-txt=`Личный куратор на ${timeTxt}`
+				+e.price
+					span Ваша цена сегодня
+					span=`${price} 000 Р`
+				+e.A.btn(href='#')
+					span Выбрать Эконом
+					span=`+ куратор ${timeTxt}`
+
+mixin sAddAsistItem()
+	+e.col.col-lg-3.col-sm-6
+		+e.item
+			+e.man-img
+				img.lazy(src="#" data-src="img/addAsist-man.svg" alt='')
+			block

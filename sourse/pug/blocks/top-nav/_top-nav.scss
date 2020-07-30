@@ -2,6 +2,12 @@
 	background-color: $white;
 	position: absolute;
 
+	transform: translateY(0);
+	&.hidden-top{
+		transform: translateY(-120%);
+	}
+
+
 	&.fixed{
 		position: fixed;
 		z-index: 100;
@@ -13,7 +19,7 @@
 	}
 
 	z-index: 20;
-	@include mt();
+	@include mt(.4);
 	top: 0;
 	left: 0;
 	width: 100%;
