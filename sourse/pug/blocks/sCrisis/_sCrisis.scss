@@ -1,7 +1,105 @@
+// start .sCrisis
+.sCrisis {
 
-	// start .sCrisis
-	.sCrisis {
-		 
+	--sPB: #{rem(30)};
+
+	--sPT: #{rem(40)};
+	--sTPB: #{rem(35)};
+	@include media-breakpoint-up(lg){
+		--sPT: #{rem(91px)};
+		--sTPB: #{rem(59px)};
+	}
+
+	.section-title{
+		h2{
+			color: $primary;
+			margin-bottom: rem(7px);
+		}
+		p{
+			font-size: rem(20);
+			color: rgba($body-color, .7);
+		}
+		p:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	&__row{
+		@include roww(40px);
+	}
+	&__txt{
+		width: 100%;
+		height: 100%;
+		padding-bottom: rem(30);
+		@include media-breakpoint-up(lg){
+			max-width: 495px;
+			padding-top: rem(30);
+			padding-bottom: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		p:first-child{
+			font-weight: bold;
+		}
+		p{
+			font-size: rem(20);
+			margin-bottom: rem(30);
+		}
+		p:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__color-box{
+		padding: 20px;
+		@include media-breakpoint-down(sm){
+			@include tear(100vw);
+		}
+		@include media-breakpoint-up(sm){
+			padding: rem(81) rem(60);
+			border-radius: rem(20);
+			position: relative;
+		}
+
+		overflow: hidden;
+		background: linear-gradient(126.35deg, #3842A2 4.86%, #212B8F 92.12%), #3741A1;
+
+		box-shadow: 0 rem(40) rem(60) rem(-50) rgba(0, 0, 0, 0.38);
+		@include media-breakpoint-up(lg){
+			box-shadow: 0px 94px 63px -51px rgba(0, 0, 0, 0.38);
+		}
+		color: $white;
+
+		p{
+			position: relative;
+			z-index: 1;
+			font-weight: bold;
+			font-size: rem(20px);
+			max-width: rem(240px);
+		}
+		p:last-child{
+			margin-bottom: 0;
+		}
+	}
+	//pic
+	&__box-bg{
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: auto;
+		height: 100%;
+
+		img{
+			max-height: 100%;
+			transform: translateX(40%);
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

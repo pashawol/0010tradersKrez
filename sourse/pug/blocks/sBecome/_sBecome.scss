@@ -110,6 +110,7 @@
 	.dashed-none {
 		.sBecome__numb::before {
 			content: none;
+			
 		}
 	}
 	@include media-breakpoint-up(xl) {}

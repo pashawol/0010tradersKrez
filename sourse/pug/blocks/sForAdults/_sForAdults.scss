@@ -1,7 +1,232 @@
+// start .sForAdults
+.sForAdults {
+	position: relative;
+	background-color: $sAble-bg;
 
-	// start .sForAdults
-	.sForAdults {
-		 
+	--sPB: #{rem(30)};
+
+	--sPT: #{rem(40)};
+	--sTPB: #{rem(30)};
+	@include media-breakpoint-up(lg){
+		--sPT: #{rem(73px)};
+		--sTPB: #{rem(46px)};
+	}
+
+	//bg
+	&__left-bg,
+	&__right-bg{
+		position: absolute;
+		z-index: 0;
+
+	}
+	&__left-bg{
+		top: rem(395);
+		left: 0;
+	}
+	&__right-bg{
+		top: rem(179);
+		right: 0;
+
+		opacity: 0.65;
+		@include media-breakpoint-up(lg){
+			opacity: 1;
+		}
+	}
+	//cont
+	&__container{
+		position: relative;
+		z-index: 1;
+
+
+		@include media-breakpoint-up(xl){
+			max-width: 1070px !important;
+		}
+	}
+
+	//
+	.section-title{
+		h2{
+			color: $primary;
+			line-height: (50/40);
+			margin-bottom: rem(7);
+		}
+		p{
+			font-size: rem(20);
+			color: rgba($body-color, .7);
+		}
+		p:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	//warning-baner
+	&__warning-baner{
+		background-color: rgba($sAble-bg, .7);
+
+		border: 1px solid $border-color;
+		box-sizing: border-box;
+
+
+
+		padding: rem(24);
+		border-radius: rem(10);
+		margin-bottom: rem(30);
+		@include media-breakpoint-up(sm){
+			padding: rem(40);
+			border-radius: rem(20);
+
+			display: flex;
+			align-items: flex-start;
+		}
+		@include media-breakpoint-up(xl){
+			padding: rem(39px) rem(52px) rem(47px) rem(54px);
+
+			margin-bottom: rem(56);
+		}
+	}
+	&__warning-img{
+		flex-shrink: 0;
+
+		width: rem(70);
+		height: rem(70);
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: rem(25);
+		@include media-breakpoint-up(sm){
+			width: rem(90);
+			height: rem(90);
+			margin-right: rem(55);
+			margin-left: 0;
+			margin-bottom: 0;
+		}
+
+		display: flex;
+		img{
+			max-width: 100%;
+			max-height: 100%;
+			width: auto;
+			height: auto;
+			margin: auto;
+		}
+	}
+	&__warning-txt{
+		p{
+			font-weight: bold;
+			font-size: rem(20px);
+		}
+		p:last-child{
+			margin-bottom: 0;
+		}
+	}
+	//
+	&__mid-headline{
+		font-weight: bold;
+		line-height: (38/30);
+		text-align: center;
+
+		margin-bottom: rem(58);
+
+	}
+	&__risk-items{
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			counter-reset: list 0;
+		}
+		li{
+			position: relative;
+			list-style-type: none;
+
+			background: #F5F6FA;
+
+
+
+			border-radius: rem(20px);
+
+			box-shadow: 0 rem(40) rem(60) rem(-50) rgba(0, 0, 0, 0.38);
+			padding: rem(10) rem(30) rem(30) rem(30);
+			@include media-breakpoint-up(lg){
+				box-shadow: 0px 94px 63px -51px rgba(0, 0, 0, 0.38);
+				padding: rem(44px) rem(52px) rem(44px) rem(139px);
+			}
+
+			margin-bottom: rem(41);
+			&:last-child{
+				margin-bottom: rem(56);
+			}
+
+
+			&:before {
+				content: counter(list);
+				counter-increment: list;
+
+				@include media-breakpoint-up(lg){
+					bottom: 0;
+					position: absolute;
+					left: 0;
+				}
+				z-index: 0;
+
+				//
+				@include media-breakpoint-up(lg){
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+				font-weight: bold;
+				color: rgba($primary, .1);
+
+				//
+				line-height: 1;
+				font-size: rem(125);
+				@include media-breakpoint-up(sm){
+					font-size: rem(200);
+				}
+				@include media-breakpoint-up(lg){
+					line-height: 0.72;
+					transform: translateX(-5%);
+					font-size: rem(406);
+				}
+				@include media-breakpoint-up(xl){
+					transform: translateX(-10%);
+				}
+			}
+
+			p{
+				font-size: rem(20);
+				position: relative;
+				z-index: 1;
+			}
+			p:last-child{
+				margin-bottom: 0;
+			}
+
+
+			//transform pp
+			&:not(:first-child):before{
+				@include media-breakpoint-up(lg){
+					transform: translateX(-15%);
+				}
+				@include media-breakpoint-up(xl){
+					transform: translateX(-25%);
+				}
+			}
+		}
+	}
+	&__convince-txt{
+		border: 1px solid $border-color;
+		border-radius: rem(20px);
+		padding: rem(21);
+		text-align: center;
+
+		font-weight: bold;
+		font-size: rem(20px);
+	}
+	&__{}
+	&__{}
+
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

@@ -292,12 +292,13 @@ function eventHandler() {
 		let footerTop = $('.footer')[0].getBoundingClientRect().top + $(window)['scrollTop']();
 		let windowHeight = calcVh(100);
 
-		if (hookBot > window.scrollY || (footerTop - windowHeight) < window.scrollY){
+		if (hookBot > window.scrollY){
 			$(fixedStrip).removeClass('fixed');
 		}
 		else {
 			$(fixedStrip).addClass('fixed');
 		}
+
 	}
 
 	function calcVh(v) {

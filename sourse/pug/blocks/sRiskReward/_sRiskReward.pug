@@ -1,9 +1,46 @@
 mixin sRiskReward()
 	// start sRiskReward
-	+b.SECTION.sRiskReward.section#sRiskReward&attributes(attributes)
+	+b.sRiskReward.section#sRiskReward&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sRiskReward
-				
-			.row
+				h4 А вознаграждение за риск оправдывает ожидания.
+				p Повышенный риск стратегии портфельных спекуляций с микростоками на ОТС полностью оправдан, ведь вознаграждение за риск превосходит все ожидания, учитывая следующие факты:
+			+e.row.row
+				+riskRewItem(1)
+					p
+						| Потенциал доходности&nbsp;в сделке
+						|
+						b составляет сотни и&nbsp;свыше тысячи
+						|
+						| процентов;
+				+riskRewItem(2)
+					p
+						| На&nbsp;нашей стороне математическое преимущество: в&nbsp;неудачной сделке&nbsp;Вы теряете не&nbsp;более
+						|
+						b 100%
+						|
+						| от&nbsp;вложенной суммы, а&nbsp;в&nbsp;прибыльной получаете в&nbsp;несколько раз больше;
+				+riskRewItem(3)
+					p
+						| Весь портфель
+						|
+						b окупается
+						|
+						| уже после фиксации первых нескольких положительных сделок;
+				+riskRewItem(4)
+					p
+						| Уже
+						|
+						b наработаны сотни положительных примеров
+						|
+						| результатов, полученных учениками Павла Крёза в&nbsp;первый&nbsp;же месяц работы по&nbsp;этой Стратегии после прохождения тренинга.
+			+e.convince-txt Кто не рискует, тот… Ну, дальше Вы сами знаете!
+
 	// end sRiskReward
+
+mixin riskRewItem(imgNum)
+	+e.col.col-sm-6.col-lg-3
+		+e.item
+			+pic(`bounty-${imgNum}.png`)(class="sRiskReward__item-bg d-none d-sm-block")
+			+e.content
+				block
