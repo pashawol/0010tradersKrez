@@ -128,7 +128,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02.jpg);"></div>')
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -170,6 +170,71 @@ function eventHandler() {
 
 		return false;
 	});
+
+	//mob menu
+	$(".menu-mobile__link").click(function () {
+		const elementClick = $(this).attr("href");
+		const destination = $(elementClick).offset().top - $('.top-nav').outerHeight();
+
+		JSCCommon.closeMenu();
+		window.setTimeout(function () {
+			$('html, body').animate({ scrollTop: destination }, 1100);
+		}, 75);
+
+		return false;
+	});
+
+	//for footer
+	function smoothScroll(qSelector){
+		let elements = document.querySelectorAll(qSelector);
+		if (elements.length === 0) return
+
+		for (let elem of elements){
+			console.log(document.body.classList.contains('tarif-page'));
+			elem.addEventListener('click', function () {
+
+				let destinyID = this.getAttribute('href'); //this.attributes.href.nodeValue
+				if (document.body.classList.contains('tarif-page')){
+					this.setAttribute('href', '/' + destinyID);
+					return;
+				}
+				else {
+					event.preventDefault();
+				}
+
+				let destinyElem = document.querySelector(destinyID);
+				if (!destinyElem) return
+
+				let destinyTop = getCoords(destinyElem).top;
+
+				window.scrollTo({
+					top: destinyTop,
+					behavior: "smooth"
+				});
+
+			});
+		}
+	}
+	smoothScroll('.ancor-js');
+	function getCoords(elem) { // crossbrowser version
+		var box = elem.getBoundingClientRect();
+
+		var body = document.body;
+		var docEl = document.documentElement;
+
+		var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+		var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+
+		var clientTop = docEl.clientTop || body.clientTop || 0;
+		var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+
+		var top  = box.top +  scrollTop - clientTop;
+		var left = box.left + scrollLeft - clientLeft;
+
+		return { top: Math.round(top), left: Math.round(left) };
+	}
+	//
+
 
 	let defaultSl = {
 		spaceBetween: 0,
@@ -302,19 +367,11 @@ function eventHandler() {
 
 		if (hookBot/2 > window.scrollY || window.scrollY >  hookBot * 1.2){
 			$(fixedStrip).removeClass('hidden-top');
-			console.log('vis');
 		}
 		else{
 			$(fixedStrip).addClass('hidden-top');
-			console.log('inv');
 		}
-
-		console.log(window.scrollY, hookBot);
-
 	}
-
-
-
 
 	function calcVh(v) {
 		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -375,6 +432,8 @@ function eventHandler() {
 		let minutes = parent.querySelector('.minutes');
 		let seconds = parent.querySelector('.seconds');
 
+
+
 		//date elements
 		let now = new Date();
 
@@ -384,7 +443,10 @@ function eventHandler() {
 		let m = getTime(minutes, now.getMinutes());
 		let s = getTime(seconds, now.getSeconds());
 
-		let targetDate = new Date(now.getFullYear(), now.getMonth(), d, h, m, s);
+		//let targetDate = new Date(now.getFullYear(), now.getMonth(), d, h, m, s);
+		//force date
+		let targetDate = new Date(2020, 7,21);
+
 
 		//interval
 		tikTakReadOut(parent, targetDate, ThisReadOutID, days, hours, minutes, seconds);

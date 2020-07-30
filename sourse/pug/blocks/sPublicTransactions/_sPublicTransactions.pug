@@ -13,5 +13,5 @@ mixin sPublicTransactions()
 				.col-lg-6
 					+e.transactions(href=`img/@2x/PublicTransactions-2.png` data-fancybox=`Transactions`)
 						+pic('PublicTransactions-2.png')
-			+e.btn(href="#") Хочу повторить эти результаты! 
+			+e.btn.scroll-link(href=`${allBtnsLink}`) Хочу повторить эти результаты!
 	// end sPublicTransactions
