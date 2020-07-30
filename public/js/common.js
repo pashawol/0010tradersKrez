@@ -6,6 +6,12 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var $ = jQuery;
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -166,7 +172,7 @@ function eventHandler() {
 			scrollTop: destination
 		}, 1100);
 		return false;
-	}); //.menu-mobile__link
+	}); //mob menu
 
 	$(".menu-mobile__link").click(function () {
 		var elementClick = $(this).attr("href");
@@ -176,9 +182,67 @@ function eventHandler() {
 			$('html, body').animate({
 				scrollTop: destination
 			}, 1100);
-		}, 50);
+		}, 75);
 		return false;
-	});
+	}); //for footer
+
+	function smoothScroll(qSelector) {
+		var elements = document.querySelectorAll(qSelector);
+		if (elements.length === 0) return;
+
+		var _iterator = _createForOfIteratorHelper(elements),
+				_step;
+
+		try {
+			for (_iterator.s(); !(_step = _iterator.n()).done;) {
+				var elem = _step.value;
+				console.log(document.body.classList.contains('tarif-page'));
+				elem.addEventListener('click', function () {
+					var destinyID = this.getAttribute('href'); //this.attributes.href.nodeValue
+
+					if (document.body.classList.contains('tarif-page')) {
+						this.setAttribute('href', '/' + destinyID);
+						return;
+					} else {
+						event.preventDefault();
+					}
+
+					var destinyElem = document.querySelector(destinyID);
+					if (!destinyElem) return;
+					var destinyTop = getCoords(destinyElem).top;
+					window.scrollTo({
+						top: destinyTop,
+						behavior: "smooth"
+					});
+				});
+			}
+		} catch (err) {
+			_iterator.e(err);
+		} finally {
+			_iterator.f();
+		}
+	}
+
+	smoothScroll('.ancor-js');
+
+	function getCoords(elem) {
+		// crossbrowser version
+		var box = elem.getBoundingClientRect();
+		var body = document.body;
+		var docEl = document.documentElement;
+		var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+		var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+		var clientTop = docEl.clientTop || body.clientTop || 0;
+		var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+		var top = box.top + scrollTop - clientTop;
+		var left = box.left + scrollLeft - clientLeft;
+		return {
+			top: Math.round(top),
+			left: Math.round(left)
+		};
+	} //
+
+
 	var defaultSl = (_defaultSl = {
 		spaceBetween: 0,
 		lazy: {
@@ -360,8 +424,10 @@ function eventHandler() {
 		var d = getTime(days, now.getDate());
 		var h = getTime(hours, now.getHours());
 		var m = getTime(minutes, now.getMinutes());
-		var s = getTime(seconds, now.getSeconds());
-		var targetDate = new Date(now.getFullYear(), now.getMonth(), d, h, m, s); //interval
+		var s = getTime(seconds, now.getSeconds()); //let targetDate = new Date(now.getFullYear(), now.getMonth(), d, h, m, s);
+		//force date
+
+		var targetDate = new Date(2020, 7, 21); //interval
 
 		tikTakReadOut(parent, targetDate, ThisReadOutID, days, hours, minutes, seconds);
 		var ThisReadOutID = window.setInterval(tikTakReadOut.bind(null, parent, targetDate, ThisReadOutID, days, hours, minutes, seconds), 1000);

@@ -27,12 +27,12 @@ mixin sMillionaire()
 			+e.lower-txt Таким образом, следующий шаг Вы сможете выбрать сами:
 			+e.btn-row.row
 				.col-md-6
-					+e.A.btn(href='#')
+					+e.A.btn.scroll-link(href=`${allBtnsLink}`)
 						|Создать себе дополнительный
 						br
 						|источник дохода
 				.col-md-6
-					+e.A.btn(href='#')
+					+e.A.btn.scroll-link(href=`${allBtnsLink}`)
 						| Начать формировать долгосрочный
 						br
 						| инвестиционный капитал
