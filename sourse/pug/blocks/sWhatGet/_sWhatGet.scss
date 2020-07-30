@@ -10,6 +10,7 @@
 
 	&__col {
 		padding-top: 1rem;
+		width: 15%;
 		@include media-breakpoint-up(md) {
 			width: rem(105);
 			padding-top: .6rem;

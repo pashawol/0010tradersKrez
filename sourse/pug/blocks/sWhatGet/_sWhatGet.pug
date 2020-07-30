@@ -8,7 +8,7 @@ mixin sWhatGet()
 				+e.item
 					.row
 						+e.col.col-auto
-							+pic(`whatGet-${img}.png`)
+							img.res-i.lazy(src="#" data-src=`img/whatGet-${img}.svg` alt="alt")
 						.col
 							+e.title.h5= title
 							+e.text= text

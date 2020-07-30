@@ -13,6 +13,8 @@ mixin sReadySource()
 			.row
 				mixin item(im,title,text)
 					+e.item
+						//- +e.imgWrap.picture-bg
+						//- 	img.lazy.res-i(src="#" data-src=`img/torn-border-${im}.svg`, alt="")
 						+pic(`torn-border-${im}.png`)(class="picture-bg")
 						+e.check
 							img(src="img/check.svg", alt="")
