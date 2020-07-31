@@ -105,13 +105,41 @@
 	}
 	&__book-bg{
 		position: relative;
+			@include media-breakpoint-up(md) {
 		padding-top: rem(234px);
 	}
+	padding-top: rem(34px);
+	}
 	&__book-img{
+		@include block(661,843);
+			@include media-breakpoint-up(md) {
 		position: absolute;
-		z-index: 1;
 		top: rem(59px);
+			}
+		z-index: 1;
 		left: 0;
+		width: 100%;
+		max-width: 661px;
+			border-radius: rem(10);
+			overflow: hidden;
+
+			@include media-breakpoint-up(md) {
+				border-radius: rem(20);
+			}
+		object{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+		iframe{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100% !important;
+			height: 100% !important;
+		}
 		img{
 			height: auto;
 

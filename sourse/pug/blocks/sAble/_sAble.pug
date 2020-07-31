@@ -22,8 +22,10 @@ mixin sAble()
 						+e.line-img
 							img.lazy(src="#" data-src="img/sAble-line.svg" alt="")
 			+e.book-bg
-				+e.A.book-img(href='https://krez.info-dvd.ru/students-book.pdf' target="blank")
-					img.lazy(src="#" data-src="img/@2x/pdf-book-sized.png" alt="")
+				+e.book-img( )
+					OBJECT( data="students-book.pdf"   type="application/pdf")
+						iframe(src="students-book.pdf", loading="lazy" allowfullscreen frameborder="0")
+					//- img.lazy(src="#" data-src="img/@2x/pdf-book-sized.png" alt="")
 				+e.man-img
 					img.lazy(src="#" data-src="img/@2x/sAble-man.png" alt="")
 	// end sAble
